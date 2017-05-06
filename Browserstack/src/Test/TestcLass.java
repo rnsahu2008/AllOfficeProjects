@@ -32,6 +32,7 @@ public class TestcLass extends ActionClass {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Chrome driver selected");
 		driver.get("https://www.flipkart.com/");
+		System.out.println("i am going to execute");
 	}
 
 	@Test

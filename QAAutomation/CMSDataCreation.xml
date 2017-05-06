@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CMSDataCreation" preserve-order="true">
+	<!-- <parameter name="pdfngreport-properties" value="pdfngreport.properties" 
+		/> -->
+	<listeners>
+	
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="com.hs18.util.Screenshot" />
+		<listener class-name="com.hs18.util.RetryListener" />
+	</listeners>
+	<parameter name="mailto" value="abhishek.bisht@homeshop18.com" />
+	<parameter name="Environment" value="Preprod" />
+	<parameter name="Browser" value="chrome" />
+	<parameter name="filePath"
+		value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\BulkSuborder.xls" />
+	<parameter name="Application" value="CMS" />
+	<parameter name="fileOutput" value="Extent.html" />
+	<parameter name="Group" value="Smoke" />
+	<parameter name="HomeDir"
+		value="D:\Projects\HS18Automation\UIAutomation\QAAutomation" />
+	<test name="CMSData">
+		<parameter name="filePath"
+			value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\BulkSuborder.xls" />  
+    <classes>
+     
+       <class name="com.hs18.TestDataCreation.CMSTestDataCreation">
+       <methods>
+ 	    	<include name="CMSDataCreation"></include>
+    	  
+       </methods>
+        </class> 
+        </classes>
+ 
+  </test>
+  
+  
+</suite> <!-- Suite -->

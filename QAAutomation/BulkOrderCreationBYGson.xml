@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BulkOrder" preserve-order="true">
+	<!-- <parameter name="pdfngreport-properties" value="pdfngreport.properties" 
+		/> -->
+	<listeners>
+		<!-- <listener class-name="com.hs18.util.ExtentReporterNG" > -->
+		<!-- <parameter name="fileOutput" value="Extent.html" /> -->
+
+		<!-- <listener class-name="com.uttesh.pdfngreport.PDFReportListener" > -->
+		<!-- <sysproperty key="org.uncommons.reportng.show-expected-exceptions" -->
+		<!-- value="true" /> -->
+		<!-- <sysproperty key="org.uncommons.reportng.velocity-log" -->
+		<!-- value="true" /> -->
+		<!-- <sysproperty key="org.uncommons.reportng.escape-output" -->
+		
+		<!-- value="false" /> -->
+		<!-- </listener> -->
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+			<!-- <listener class-name="com.hs18.util.Screenshot" />  -->
+		<listener class-name="com.hs18.util.RetryListener" />
+	</listeners>
+	<parameter name="mailto" value="abhishek.bisht@homeshop18.com" />
+	<parameter name="Environment" value="Preprod" />
+	<parameter name="Browser" value="mobile" />
+	<parameter name="filePath"
+		value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\TestDataCreation.xls" />
+	<parameter name="Application" value="CRM" />
+	<parameter name="fileOutput" value="Extent.html" />
+	<parameter name="Group" value="Smoke" />
+	<parameter name="HomeDir"
+		value="D:\Projects\HS18Automation\UIAutomation\QAAutomation" />
+	<test name="Bulk">
+		<parameter name="filePath"
+			value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\TestDataCreation.xls" />  
+    <classes>
+     
+       <class name="com.hs18.TestDataCreation.BulkOrderCreatiobBYGson">
+       <methods>
+ 	    	<include name="createBulkOrdersGsonRequest"></include>
+    	  
+       </methods>
+        </class> 
+        </classes>
+ 
+  </test>
+  
+  
+</suite> <!-- Suite -->

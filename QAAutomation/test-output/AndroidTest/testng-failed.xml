@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [AndroidTest]">
+  <parameter name="pdfngreport-properties" value="pdfngreport.properties"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+  </listeners>
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.hs18.Test.Android.AndroidCODTest">
+        <methods>
+          <include name="setDriver"/>
+          <include name="codBooking"/>
+        </methods>
+      </class> <!-- com.hs18.Test.Android.AndroidCODTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [AndroidTest] -->

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Smoke]">
+  <parameter name="Group" value="Smoke"/>
+  <parameter name="fileOutput" value="Extent.html"/>
+  <parameter name="filePath" value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\CRMTestData.xls"/>
+  <parameter name="HomeDir" value="D:\Projects\HS18Automation\UIAutomation\QAAutomation"/>
+  <parameter name="Environment" value="Preprod"/>
+  <parameter name="mailto" value="abhishek.bisht@homeshop18.com"/>
+  <parameter name="Application" value="DFC"/>
+  <parameter name="Browser" value="Chrome"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.hs18.util.Screenshot"/>
+    <listener class-name="com.hs18.util.RetryListener"/>
+  </listeners>
+  <test name="DFC(failed)">
+    <parameter name="filePath" value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\CRMTestData.xls"/>
+    <classes>
+      <class name="com.hs18.Test.DFC.DFCCreateOrderFormTest">
+        <methods>
+          <include name="SearchProduct" invocation-numbers="0"/>
+          <include name="beforeFielSet"/>
+        </methods>
+      </class> <!-- com.hs18.Test.DFC.DFCCreateOrderFormTest -->
+      <class name="com.hs18.Test.DFC.DfcLoginTest">
+        <methods>
+          <include name="setDriver"/>
+          <include name="beforeFielSet"/>
+          <include name="driverClose"/>
+          <include name="logInToDFC" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- com.hs18.Test.DFC.DfcLoginTest -->
+    </classes>
+  </test> <!-- DFC(failed) -->
+</suite> <!-- Failed suite [Smoke] -->

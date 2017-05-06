@@ -1,0 +1,189 @@
+<html>
+<head>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	var selectApp;
+	
+	function populateDropDown(obj, type) {
+		//getGroup(obj);
+		if (type == 1) {
+			var testdata = document.createElement("OPTION");
+			testdata.value = obj;
+			testdata.text = obj;
+			testdatadropdown.options.add(testdata);
+		}
+		$.each(selectApp, function(i, val) {
+			if (obj == val.appName) {
+
+				var list = val.browser;
+				var grouplist = val.group;
+				//var subjectValArray = list.split(",");
+				for (var j = 0; j < list.length; j++) {
+					var optn = document.createElement("OPTION");
+					optn.text = list[j];
+					optn.value = list[j];
+					browserList.options.add(optn);
+				}
+
+				//var subjectValArray = list.split(",");
+				for (var j = 0; j < grouplist.length; j++) {
+					var optn = document.createElement("OPTION");
+					optn.text = grouplist[j];
+					optn.value = grouplist[j];
+					groupList.options.add(optn);
+				}
+
+			}
+		});
+	}
+
+	function submitformverify() {
+		if ($("#ApplicationsList").val() == "" || $("#groupList").val() == ""
+				|| $("#browserList").val() == "" || $("#groupList").val() == ""
+				|| $("#environmentList").val() == "")
+				 {
+			alert("Please provide all details");
+		}
+		else
+			{
+				var uploadform=document.getElementById("form_id");
+				uploadform.submit();
+			}
+	}
+
+	function download() {
+
+		$("#downloadFileAnchor").attr("href",
+				"DownloadTestData?appName=" + $("#ApplicationsList").val());
+		$("#downloadFileAnchor")[0].click();
+
+	}
+	$(document).ready(
+			function() {
+				$.ajax({
+					type : "GET",
+					url : "PageLoader",
+					dataType : "json",
+					//if received a response from the server
+					success : function(data, textStatus, jqXHR) {
+						console.log("reponse from server:" + JSON.stringify(data));
+						selectApp = data;
+						var optionTxt = "<option value=''>Select</option>";
+						$.each(data, function(i, val) {
+							optionTxt += "<option value='"+val.appName+"'>"
+									+ val.appName + "</option>"
+						});
+						$('#ApplicationsList').html(optionTxt);
+
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						console.log("Something really bad happened "
+								+ textStatus);
+
+					}
+				});
+
+			});
+	function getGroup(appName) {
+		$.ajax({
+			type : "POST",
+			url : "PageLoader",
+			dataType : "json",
+			data : "{'appName':" + appName + "}",
+			//if received a response from the server
+			success : function(data, textStatus, jqXHR) {
+				console.log("reponse from server:" + data);
+				var optionTxt = "<option value=''>Select</option>";
+				$.each(data, function(i, val) {
+					optionTxt += "<option value='"+val.groupid+"'>"
+							+ val.groupname + "</option>"
+				});
+				$('#groupList').html(optionTxt);
+
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log("Something really bad happened " + textStatus);
+
+			}
+		});
+	}
+	//});
+</script>
+</head>
+<title>Automation Test Input Screen</title>
+<body>
+	<form action="Formaction" method="post" name="form_name" id="form_id">
+		<table style="width: 60%; border-spacing: 12px;" align="center">
+			<tr>
+				<td><b>Applications:</b></td>
+				<td><select id="ApplicationsList" name="ApplicationsList"
+					onchange="javascript:populateDropDown(this.value,1);">
+						<option value="">Select</option>
+
+				</select></td>
+			</tr>
+
+			<tr>
+				<td><b>Browser:</b></td>
+				<td><select id="browserList" name="browserList"
+					onchange="javascript:populateDropDown(this,2);"><option
+							value="">Select</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><b>Group:</b></td>
+				<td><select id="groupList" name="groupList"><option
+							value="">Select</option>
+
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><b>Enviroment:</b></td>
+				<td><select id="environmentList" name="environmentList"><option
+							value="">Select</option>
+
+						<option value="Preprod">Preprod</option>
+						<option value="Beta">Beta</option>
+						<option value="Production">Production</option>
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><b>Select Test Data:</b></td>
+				<td><select id="testdatadropdown" name="testdatadropdown"
+					onchange="javascript:populateDropDown(this,3);"><option
+							value="">Select</option>
+				</select> <input type="button" value="Download"
+					onclick="javascript:download();" />
+			</tr>
+			<tr>
+				<td><b>Enter User Mail Id:</b></td>
+				<td> <input id ="userid" name="userid" type="text" value="Enter User's Homeshop18 Id"
+					 />
+			</tr>
+			<tr>
+				<td><input type="button" value="Submit"
+					onclick="javascript:submitformverify();"></td>
+				<td></td>
+			</tr>
+			
+		</table>
+
+	</form>
+
+	<div style="display: none;">
+		<a id="downloadFileAnchor"></a>
+	</div>
+
+	<div style="text-align: center;">
+		<iframe id="uploadframe" src="upload.html"
+			style="border: 0px; width: 100%; text-align: center; margin-left: 609px;">
+		</iframe>
+	</div>
+
+</body>
+</html>
+

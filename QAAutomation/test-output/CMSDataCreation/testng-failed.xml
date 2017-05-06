@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CMSDataCreation]">
+  <parameter name="Group" value="Smoke"/>
+  <parameter name="fileOutput" value="Extent.html"/>
+  <parameter name="filePath" value="E:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\BulkSuborder.xls"/>
+  <parameter name="HomeDir" value="E:\Projects\HS18Automation\UIAutomation\QAAutomation"/>
+  <parameter name="Environment" value="Preprod"/>
+  <parameter name="mailto" value="abhishek.bisht@homeshop18.com"/>
+  <parameter name="Application" value="CMS"/>
+  <parameter name="Browser" value="chrome"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.hs18.util.Screenshot"/>
+    <listener class-name="com.hs18.util.RetryListener"/>
+  </listeners>
+  <test name="CMSData(failed)">
+    <parameter name="filePath" value="E:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\BulkSuborder.xls"/>
+    <classes>
+      <class name="com.hs18.TestDataCreation.CMSTestDataCreation">
+        <methods>
+          <include name="setDriver"/>
+          <include name="CMSDataCreation"/>
+        </methods>
+      </class> <!-- com.hs18.TestDataCreation.CMSTestDataCreation -->
+    </classes>
+  </test> <!-- CMSData(failed) -->
+</suite> <!-- Failed suite [CMSDataCreation] -->

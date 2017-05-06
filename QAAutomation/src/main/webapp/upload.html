@@ -1,0 +1,21 @@
+<script>
+
+function uploadFile(){
+	var uploadform=document.getElementById("uploadform");
+	uploadform.submit();
+	//window.location.reload();
+}
+
+</script>
+<form action="UploadFile" method="post" enctype="multipart/form-data"
+	id="uploadform">
+	<table style="width: 10%; border-spacing: 12px;">
+		<tr>
+			<td><input type="file" name="file" /></td>
+			<td><input type="submit" value="Upload" onclick="uploadFile()"/></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+</form>

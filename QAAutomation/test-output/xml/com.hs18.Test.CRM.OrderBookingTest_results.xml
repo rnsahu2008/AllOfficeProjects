@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CRM"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="14.264">
+  <properties />
+  
+  
+            <testcase name="callernoTest" time="11.356" classname="com.hs18.Test.CRM.OrderBookingTest" />
+                <testcase name="searchProductTest" time="2.908" classname="com.hs18.Test.CRM.OrderBookingTest" />
+      
+</testsuite>

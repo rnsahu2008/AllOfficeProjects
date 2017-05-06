@@ -1,0 +1,89 @@
+2016-05-06 12:46:40,346 WARN  [SoapUI] Missing folder [E:\Projects\QAAutomation\.\ext] for external libraries
+2016-05-06 12:46:40,590 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\abhishek.bisht\soapui-settings.xml]
+2016-05-06 12:46:41,540 INFO  [WsdlProject] Loaded project from [file:/E:/Projects/QAAutomation/Data/soapui-test-project.xml]
+2016-05-06 12:46:41,553 WARN  [WsdlProject] Project 'TestService' is from a newer version (5.2.1) of soapUI than this (4.0.1) and parts of it may be incompatible or incorrect. Saving this project with this version of soapUI may cause it to function differently.
+2016-05-06 12:46:41,930 INFO  [SoapUITestCaseRunner] Running soapUI tests in project [TestService]
+2016-05-06 12:46:41,932 INFO  [SoapUITestCaseRunner] Running Project [TestService], runType = SEQUENTIAL
+2016-05-06 12:46:41,948 INFO  [SoapUITestCaseRunner] Running soapUI testcase [Gift Charges]
+2016-05-06 12:46:41,958 INFO  [SoapUITestCaseRunner] running step [GiftCharges]
+2016-05-06 12:46:43,184 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2016-05-06 12:46:43,184 INFO  [SoapUITestCaseRunner] Assertion [GiftWrapCharges] has status FAILED
+2016-05-06 12:46:43,184 ERROR [SoapUITestCaseRunner] ASSERTION FAILED -> XPathContains assertion failed for path [declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//giftWrapCharge)[1]] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying XDK... Trying delegated path engine... FAILED on declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//giftWrapCharge)[1]
+2016-05-06 12:46:43,184 INFO  [SoapUITestCaseRunner] Assertion [XPath Match] has status VALID
+2016-05-06 12:46:43,185 ERROR [SoapUITestCaseRunner] GiftCharges failed, exporting to [E:\Projects\QAAutomation\Smoke-Gift_Charges-GiftCharges-0-FAILED.txt]
+2016-05-06 12:46:43,221 INFO  [SoapUITestCaseRunner] running step [ItemPropertyTransfer]
+2016-05-06 12:46:43,263 ERROR [SoapUITestCaseRunner] ItemPropertyTransfer failed, exporting to [E:\Projects\QAAutomation\Smoke-Gift_Charges-ItemPropertyTransfer-0-FAILED.txt]
+2016-05-06 12:46:43,264 INFO  [SoapUITestCaseRunner] running step [JDBC Request]
+2016-05-06 12:46:43,295 ERROR [SoapUI] An error occured [No suitable driver], see error log for details
+2016-05-06 12:46:43,296 ERROR [errorlog] java.sql.SQLException: No suitable driver
+java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getDriver(DriverManager.java:278)
+	at com.eviware.soapui.support.jdbc.JdbcUtils.initConnection(JdbcUtils.java:52)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.getDatabaseConnection(JdbcSubmit.java:218)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.prepare(JdbcSubmit.java:261)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.runQuery(JdbcSubmit.java:197)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.run(JdbcSubmit.java:161)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.<init>(JdbcSubmit.java:75)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcRequest.submit(JdbcRequest.java:135)
+	at com.eviware.soapui.impl.wsdl.teststeps.JdbcRequestTestStep.run(JdbcRequestTestStep.java:181)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.runTestStep(AbstractTestCaseRunner.java:232)
+	at com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner.runCurrentTestStep(WsdlTestCaseRunner.java:48)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:141)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:42)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestRunner.run(AbstractTestRunner.java:135)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-06 12:46:43,298 ERROR [SoapUI] An error occured [Failed to init connection for drvr [com.mysql.jdbc.Driver], connectionString [jdbc:mysql://app06.preprod.hs18.lan:3306/hsn18db?user=hs18_dfcserver&password=6F($3Rv3R!]], see error log for details
+2016-05-06 12:46:43,298 ERROR [errorlog] com.eviware.soapui.support.SoapUIException: Failed to init connection for drvr [com.mysql.jdbc.Driver], connectionString [jdbc:mysql://app06.preprod.hs18.lan:3306/hsn18db?user=hs18_dfcserver&password=6F($3Rv3R!]
+com.eviware.soapui.support.SoapUIException: Failed to init connection for drvr [com.mysql.jdbc.Driver], connectionString [jdbc:mysql://app06.preprod.hs18.lan:3306/hsn18db?user=hs18_dfcserver&password=6F($3Rv3R!]
+	at com.eviware.soapui.support.jdbc.JdbcUtils.initConnection(JdbcUtils.java:64)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.getDatabaseConnection(JdbcSubmit.java:218)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.prepare(JdbcSubmit.java:261)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.runQuery(JdbcSubmit.java:197)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.run(JdbcSubmit.java:161)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcSubmit.<init>(JdbcSubmit.java:75)
+	at com.eviware.soapui.impl.wsdl.panels.teststeps.JdbcRequest.submit(JdbcRequest.java:135)
+	at com.eviware.soapui.impl.wsdl.teststeps.JdbcRequestTestStep.run(JdbcRequestTestStep.java:181)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.runTestStep(AbstractTestCaseRunner.java:232)
+	at com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner.runCurrentTestStep(WsdlTestCaseRunner.java:48)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:141)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestCaseRunner.internalRun(AbstractTestCaseRunner.java:42)
+	at com.eviware.soapui.impl.wsdl.support.AbstractTestRunner.run(AbstractTestRunner.java:135)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-06 12:46:43,300 ERROR [SoapUITestCaseRunner] JDBC Request failed, exporting to [E:\Projects\QAAutomation\Smoke-Gift_Charges-JDBC_Request-0-FAILED.txt]
+2016-05-06 12:46:43,301 INFO  [SoapUITestCaseRunner] running step [ship]
+2016-05-06 12:46:43,647 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2016-05-06 12:46:43,647 INFO  [SoapUITestCaseRunner] Assertion [Shipcharge] has status FAILED
+2016-05-06 12:46:43,647 ERROR [SoapUITestCaseRunner] ASSERTION FAILED -> XPathContains assertion failed for path [declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//shippingCharges)[1]] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying XDK... Trying delegated path engine... FAILED on declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//shippingCharges)[1]
+2016-05-06 12:46:43,647 ERROR [SoapUITestCaseRunner] ship failed, exporting to [E:\Projects\QAAutomation\Smoke-Gift_Charges-ship-0-FAILED.txt]
+2016-05-06 12:46:43,682 INFO  [SoapUITestCaseRunner] Finished running soapUI testcase [Gift Charges], time taken: 1629ms, status: FAILED
+2016-05-06 12:46:43,682 INFO  [SoapUITestCaseRunner] Running soapUI testcase [Shipping Charges]
+2016-05-06 12:46:43,683 INFO  [SoapUITestCaseRunner] running step [shipcharges]
+2016-05-06 12:46:44,015 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2016-05-06 12:46:44,015 INFO  [SoapUITestCaseRunner] Finished running soapUI testcase [Shipping Charges], time taken: 331ms, status: FINISHED
+2016-05-06 12:46:44,017 INFO  [SoapUITestCaseRunner] Running soapUI testcase [Is Active]
+2016-05-06 12:46:44,017 INFO  [SoapUITestCaseRunner] running step [Is Active]
+2016-05-06 12:46:44,185 INFO  [SoapUITestCaseRunner] Assertion [ISActive] has status FAILED
+2016-05-06 12:46:44,185 ERROR [SoapUITestCaseRunner] ASSERTION FAILED -> XPathContains assertion failed for path [declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//isActive)[1]] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying XDK... Trying delegated path engine... FAILED on declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//isActive)[1]
+2016-05-06 12:46:44,185 ERROR [SoapUITestCaseRunner] Is Active failed, exporting to [E:\Projects\QAAutomation\Smoke-Is_Active-Is_Active-0-FAILED.txt]
+2016-05-06 12:46:44,221 INFO  [SoapUITestCaseRunner] Finished running soapUI testcase [Is Active], time taken: 167ms, status: FAILED
+2016-05-06 12:46:44,221 INFO  [SoapUITestCaseRunner] Project [TestService] finished with status [FAILED] in 2283ms

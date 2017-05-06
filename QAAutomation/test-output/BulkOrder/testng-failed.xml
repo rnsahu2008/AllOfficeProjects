@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [BulkOrder]">
+  <parameter name="Group" value="Smoke"/>
+  <parameter name="fileOutput" value="Extent.html"/>
+  <parameter name="filePath" value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\TestDataCreation.xls"/>
+  <parameter name="HomeDir" value="D:\Projects\HS18Automation\UIAutomation\QAAutomation"/>
+  <parameter name="Environment" value="Preprod"/>
+  <parameter name="mailto" value="abhishek.bisht@homeshop18.com"/>
+  <parameter name="Application" value="CRM"/>
+  <parameter name="Browser" value="mobile"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.hs18.util.RetryListener"/>
+  </listeners>
+  <test name="Bulk(failed)">
+    <parameter name="filePath" value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\TestDataCreation.xls"/>
+    <classes>
+      <class name="com.hs18.TestDataCreation.BulkOrderCreatiobBYGson">
+        <methods>
+          <include name="setDriver"/>
+          <include name="beforeFielSet"/>
+          <include name="driverClose"/>
+          <include name="createBulkOrdersGsonRequest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.hs18.TestDataCreation.BulkOrderCreatiobBYGson -->
+    </classes>
+  </test> <!-- Bulk(failed) -->
+</suite> <!-- Failed suite [BulkOrder] -->

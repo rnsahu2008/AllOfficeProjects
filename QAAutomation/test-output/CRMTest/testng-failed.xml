@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CRMTest]">
+  <parameter name="pdfngreport-properties" value="pdfngreport.properties"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="com.hs18.util.RetryListener"/>
+  </listeners>
+  <test name="Log in Test(failed)">
+    <classes>
+      <class name="com.hs18.Test.CRM.LogInTest">
+        <methods>
+          <include name="logInToCRM"/>
+        </methods>
+      </class> <!-- com.hs18.Test.CRM.LogInTest -->
+    </classes>
+  </test> <!-- Log in Test(failed) -->
+  <test name="Order Booking Test(failed)">
+    <classes>
+      <class name="com.hs18.Test.CRM.OrderBookingTest">
+        <methods>
+          <include name="pincodeTest"/>
+          <include name="callernoTest"/>
+          <include name="searchProductTest"/>
+          <include name="cartTest"/>
+        </methods>
+      </class> <!-- com.hs18.Test.CRM.OrderBookingTest -->
+    </classes>
+  </test> <!-- Order Booking Test(failed) -->
+</suite> <!-- Failed suite [CRMTest] -->

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke" preserve-order="true">
+	<!-- <parameter name="pdfngreport-properties" value="pdfngreport.properties" 
+		/> -->
+	<listeners>
+		<listener class-name="com.hs18.util.ExtentReporterNG" />
+		<!-- <parameter name="fileOutput" value="Extent.html" /> -->
+		<!-- <listener class-name="com.uttesh.pdfngreport.PDFReportListener" > -->
+		<!-- <sysproperty key="org.uncommons.reportng.show-expected-exceptions" -->
+		<!-- value="true" /> -->
+		<!-- <sysproperty key="org.uncommons.reportng.velocity-log" -->
+		<!-- value="true" /> -->
+		<!-- <sysproperty key="org.uncommons.reportng.escape-output" -->
+		<!-- value="false" /> -->
+		<!-- </listener> -->
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="com.hs18.util.Screenshot" />
+		<listener class-name="com.hs18.util.RetryListener" />
+	</listeners>
+	<parameter name="mailto" value="abhishek.bisht@homeshop18.com" />
+	<parameter name="Environment" value="Preprod" />
+	<parameter name="Browser" value="chrome" />
+	<parameter name="filePath"
+		value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\CRMTestData.xls" />
+	<parameter name="Application" value="CRM" />
+	<parameter name="fileOutput" value="Extent.html" />
+	<parameter name="Group" value="Smoke" />
+	<parameter name="HomeDir"
+		value="D:\Projects\HS18Automation\UIAutomation\QAAutomation" />
+	<test name="CRM">
+		<parameter name="filePath"
+			value="D:\Projects\HS18Automation\UIAutomation\QAAutomation\TestFile\CRMTestData.xls" />
+		<classes>
+			<class name="com.hs18.Test.CRM.LogInTest">
+				<methods>
+					<include name="logInToCRM" />
+				</methods>
+			</class> <!-- com.hs18.Test.CRM.LogInTest -->
+			<class name="com.hs18.Test.CRM.OrderBookingTest">
+				<methods>
+					<include name="callernoTest" />
+					<include name="searchProductTest" />
+					<!-- <include name="pincodeTest"/> -->
+					<!-- <include name="cartTest"/> -->
+					<!-- <include name="leadTest"/> -->
+				</methods>
+			</class> <!-- com.hs18.Test.CRM.OrderBookingTest -->
+			<!-- <class name="com.hs18.Test.CRM.EnquiryTest"> -->
+			<!-- <methods> -->
+			<!-- <include name="CreateLeadWithExistingCustomerTest" /> -->
+			<!-- </methods> -->
+			<!-- </class> com.hs18.Test.CRM.LogInTest -->
+		</classes>
+	</test> <!-- CRM -->
+</suite> <!-- Smoke -->

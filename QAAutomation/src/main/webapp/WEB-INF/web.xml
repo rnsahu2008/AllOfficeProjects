@@ -1,0 +1,60 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<display-name>QA Automation</display-name>
+
+	<welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+<!--     <welcome-file>index.htm</welcome-file> -->
+<!--     <welcome-file>index.jsp</welcome-file> -->
+<!--     <welcome-file>default.html</welcome-file> -->
+<!--     <welcome-file>default.htm</welcome-file> -->
+<!--     <welcome-file>default.jsp</welcome-file> -->
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Formaction</display-name>
+    <servlet-name>Formaction</servlet-name>
+    <servlet-class>com.hs18.util.Formaction</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Formaction</servlet-name>
+    <url-pattern>/Formaction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PageLoader</display-name>
+    <servlet-name>PageLoader</servlet-name>
+    <servlet-class>com.hs18.util.PageLoader</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PageLoader</servlet-name>
+    <url-pattern>/PageLoader</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DownloadTestData</display-name>
+    <servlet-name>DownloadTestData</servlet-name>
+    <servlet-class>com.hs18.util.DownloadTestData</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadTestData</servlet-name>
+    <url-pattern>/DownloadTestData</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>UploadFile</display-name>
+    <servlet-name>UploadFile</servlet-name>
+    <servlet-class>com.hs18.util.UploadFile</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadFile</servlet-name>
+    <url-pattern>/UploadFile</url-pattern>
+  </servlet-mapping>
+</web-app>

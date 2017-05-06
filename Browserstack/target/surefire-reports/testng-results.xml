@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="BrowserStacksSuite" duration-ms="18248" started-at="2017-05-06T08:41:22Z" finished-at="2017-05-06T08:41:41Z">
+  <suite name="BrowserStacksSuite" duration-ms="18105" started-at="2017-05-06T08:10:17Z" finished-at="2017-05-06T08:10:35Z">
     <groups>
     </groups>
-    <test name="flipkartPrice" duration-ms="18248" started-at="2017-05-06T08:41:22Z" finished-at="2017-05-06T08:41:41Z">
+    <test name="flipkartPrice" duration-ms="18105" started-at="2017-05-06T08:10:17Z" finished-at="2017-05-06T08:10:35Z">
       <class name="Test.TestcLass">
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:Test.TestcLass@15f8701f]" name="setDriver" is-config="true" duration-ms="10245" started-at="2017-05-06T14:11:12Z" finished-at="2017-05-06T14:11:22Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:Test.TestcLass@11d4dbd6]" name="setDriver" is-config="true" duration-ms="10620" started-at="2017-05-06T13:40:07Z" finished-at="2017-05-06T13:40:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setDriver -->
-        <test-method status="FAIL" signature="flipkartPrice()[pri:0, instance:Test.TestcLass@15f8701f]" name="flipkartPrice" duration-ms="16064" started-at="2017-05-06T14:11:22Z" finished-at="2017-05-06T14:11:38Z">
+        <test-method status="FAIL" signature="flipkartPrice()[pri:0, instance:Test.TestcLass@11d4dbd6]" name="flipkartPrice" duration-ms="15970" started-at="2017-05-06T13:40:17Z" finished-at="2017-05-06T13:40:33Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Cannot locate option with value: 30000
@@ -27,8 +27,8 @@ Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca8
 System info: host: 'HSNMM-RamNiwas', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: driver.version: unknown
 	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:208)
-	at Test.ActionClass.dropdown(ActionClass.java:69)
-	at Test.TestcLass.flipkartPrice(TestcLass.java:46)
+	at Test.ActionClass.dropdown(ActionClass.java:68)
+	at Test.TestcLass.flipkartPrice(TestcLass.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -91,7 +91,7 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flipkartPrice -->
-        <test-method status="PASS" signature="closedriver()[pri:0, instance:Test.TestcLass@15f8701f]" name="closedriver" is-config="true" duration-ms="2136" started-at="2017-05-06T14:11:39Z" finished-at="2017-05-06T14:11:41Z">
+        <test-method status="PASS" signature="closedriver()[pri:0, instance:Test.TestcLass@11d4dbd6]" name="closedriver" is-config="true" duration-ms="2103" started-at="2017-05-06T13:40:33Z" finished-at="2017-05-06T13:40:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closedriver -->

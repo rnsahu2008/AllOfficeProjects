@@ -31,6 +31,7 @@ public class ActionClass extends Locator {
 	public void click(By locator) // To click on a locatoraf
 	{
 		driver.findElement(locator).click();
+		
 
 	}
 
@@ -38,7 +39,7 @@ public class ActionClass extends Locator {
 	{
 		WebElement element = driver.findElement(locator);
 		element.sendKeys(Keys.ENTER);
-
+		
 	}
 	
 	public void clickEnterPageDown(By locator) // To click on a locatoraf

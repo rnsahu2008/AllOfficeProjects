@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="42822" started-at="2017-04-10T10:13:29Z" finished-at="2017-04-10T10:14:12Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="42822" started-at="2017-04-10T10:13:29Z" finished-at="2017-04-10T10:14:12Z">
+      <class name="Test.TestcLass">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:Test.TestcLass@19dfb72a]" name="setDriver" is-config="true" duration-ms="11757" started-at="2017-04-10T15:43:17Z" finished-at="2017-04-10T15:43:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="PASS" signature="flipkartPrice()[pri:0, instance:Test.TestcLass@19dfb72a]" name="flipkartPrice" duration-ms="40656" started-at="2017-04-10T15:43:29Z" finished-at="2017-04-10T15:44:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flipkartPrice -->
+        <test-method status="PASS" signature="closedriver()[pri:0, instance:Test.TestcLass@19dfb72a]" name="closedriver" is-config="true" duration-ms="2147" started-at="2017-04-10T15:44:09Z" finished-at="2017-04-10T15:44:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closedriver -->
+      </class> <!-- Test.TestcLass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

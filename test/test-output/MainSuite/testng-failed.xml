@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" verbose="2" name="Failed suite [MainSuite]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="src.Screenshot"/>
+    <listener class-name="src.RetryListener"/>
+  </listeners>
+  <test name="Case Panel(failed)">
+    <classes>
+      <class name="src.CasePanel">
+        <methods>
+          <include name="driverClose"/>
+          <include name="setDriver"/>
+          <include name="casePanel" invocation-numbers="0 0"/>
+        </methods>
+      </class> <!-- src.CasePanel -->
+    </classes>
+  </test> <!-- Case Panel(failed) -->
+</suite> <!-- Failed suite [MainSuite] -->

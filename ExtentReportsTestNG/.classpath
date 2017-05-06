@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/extentreports-java-v2.40.2/extentreports-java-2.40.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/apache-mime4j-0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/com.lowagie.text-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/extentreports-java-2.40.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/httpclient-4.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/httpcore-4.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/httpmime-4.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/javax.mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/jcommander-1.48.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/netty-3.5.7.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/phantomjsdriver-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/selenium-java-2.53.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/selenium-java-2.53.0-srcs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/sqlite-jdbc-3.8.11.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/testng-6.9.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ram.Sahu/workspace/ram/LatestJars/selenium-2.53.0/selenium-java-2.53.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

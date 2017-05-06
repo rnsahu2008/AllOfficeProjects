@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [HS18_CRM login test suite]">
+  <parameter name="correctpassword" value="hsnmanish"/>
+  <parameter name="correctAgentID" value="manish3"/>
+  <parameter name="incorrectAgentID" value="wrong"/>
+  <parameter name="incorrectpassword" value="credentials"/>
+  <listeners>
+    <listener class-name="com.hs18.extentreports.listener.ExtentReporterNG"/>
+  </listeners>
+  <test name="Test For Login to CRM(failed)">
+    <classes>
+      <class name="com.hs18.extentreports.tests.LoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="failingTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.hs18.extentreports.tests.LoginTest -->
+    </classes>
+  </test> <!-- Test For Login to CRM(failed) -->
+</suite> <!-- Failed suite [HS18_CRM login test suite] -->

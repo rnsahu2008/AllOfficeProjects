@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="HS18_CRM login test suite" verbose="1">
+	<listeners>
+		<listener class-name="com.hs18.extentreports.listener.ExtentReporterNG" />
+		</listeners>
+	<parameter name="correctAgentID" value="manish3" />
+	<parameter name="correctpassword" value="hsnmanish" />
+	<parameter name="incorrectAgentID" value="wrong" />
+	<parameter name="incorrectpassword" value="credentials" />
+
+<test name="Test For Login to CRM" preserve-order="true">
+  
+    <classes>
+     
+       <class name="com.hs18.extentreports.tests.LoginTest">
+       
+        </class> 
+        </classes>
+  </test> 
+
+
+</suite>

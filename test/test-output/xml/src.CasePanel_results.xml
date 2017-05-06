@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Case Panel"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="84.542">
+  <properties />
+  
+  
+            <testcase name="login" time="3.668" classname="src.CasePanel" />
+                <testcase name="casePanel" time="80.874" classname="src.CasePanel" />
+      
+</testsuite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" configfailurepolicy="continue">
+	<parameter name="Environment" value="${env}"></parameter>   
+    <test name="apitests"  parallel="none">
+    <classes>
+		<class name="com.lc.tests.userservice.AuthenticateUser"/>
+		<class name="com.lc.tests.userservice.GetUser"/>
+		<class name="com.lc.tests.userservice.UpdatePassword"/>
+		<class name="com.lc.tests.userservice.UserOptins"/>
+		<class name="com.lc.tests.userservice.UserPreferences"/>
+		<class name="com.lc.tests.userservice.UserRoles"/>
+		<class name="com.lc.tests.userservice.UpdateUserInformation"/>
+		<class name="com.lc.tests.userservice.CreateUser"/>
+		<class name="com.lc.tests.userservice.End2EndScenarios"/>
+    </classes>
+    </test>
+</suite>

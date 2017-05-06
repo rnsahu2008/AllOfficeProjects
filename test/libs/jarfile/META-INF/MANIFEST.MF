@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Built-By: uttesh
+Build-Jdk: 1.7.0_25
+Created-By: Apache Maven 3.0.4
+Main-Class: com.uttesh.pdfngreport.PDFReportListener
+Archiver-Version: Plexus Archiver
+

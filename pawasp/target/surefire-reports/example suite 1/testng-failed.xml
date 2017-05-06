@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [example suite 1]">
+  <test name="Regression suite 1">
+    <classes>
+      <class name="ReportTestPackage.clsPawasp">
+        <parameter name="password" value="biteam"/>
+        <parameter name="url" value="http://172.16.0.103:8000/#/"/>
+        <parameter name="username" value="pawasp"/>
+        <methods>
+          <include name="TestLogin"/>
+        </methods>
+      </class> <!-- ReportTestPackage.clsPawasp -->
+    </classes>
+  </test> <!-- Regression suite 1 -->
+  <test name="Regression suite 1(failed)">
+    <classes>
+      <class name="ReportTestPackage.clsPawasp">
+        <parameter name="password" value="biteam"/>
+        <parameter name="url" value="http://172.16.0.103:8000/#/"/>
+        <parameter name="username" value="pawasp"/>
+        <methods>
+          <include name="TestLogin" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- ReportTestPackage.clsPawasp -->
+    </classes>
+  </test> <!-- Regression suite 1(failed) -->
+</suite> <!-- Failed suite [example suite 1] -->

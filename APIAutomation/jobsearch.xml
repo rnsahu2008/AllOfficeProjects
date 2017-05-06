@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" configfailurepolicy="continue">
+	<parameter name="Environment" value="${env}"></parameter>
+    <test name="apitests"  parallel="none">
+    <classes>
+		<class name="com.lc.tests.jobsearch.GetLocations"/>
+		<class name="com.lc.tests.jobsearch.GetTitles"/>
+		<class name="com.lc.tests.jobsearch.JobSearchGet_ErrorCodes"/>
+		<class name="com.lc.tests.jobsearch.JobSearchGet"/>
+		<class name="com.lc.tests.jobsearch.RelevancyPost"/>            
+   </classes>
+    
+    </test>
+</suite>

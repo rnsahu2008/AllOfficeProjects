@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" configfailurepolicy="continue">
+<parameter name="Environment" value="${env}" />
+<parameter name="Switch" value="${Switch}" />
+<parameter name="Wcrd" value="${Wcrd}" />
+<parameter name="Adyn" value="${Adyn}" />
+<test name="apitests"  parallel="none">
+<classes>
+<class name="com.lc.tests.ecom.CancelSubscription"/>
+<class name="com.lc.tests.ecom.CreateCustomer"/>
+<class name="com.lc.tests.ecom.CreatePayment"/>
+<class name="com.lc.tests.ecom.CreateSubscription"/>
+<class name="com.lc.tests.ecom.DeactivateSubscription"/>
+<class name="com.lc.tests.ecom.GetEntity"/>
+<class name="com.lc.tests.ecom.LinkedSubscription"/>
+<class name="com.lc.tests.ecom.PostProperties"/>
+<class name="com.lc.tests.ecom.RefundSubscription"/>
+<class name="com.lc.tests.ecom.Services"/>
+</classes>
+</test>
+</suite>

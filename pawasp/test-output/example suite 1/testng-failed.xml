@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [example suite 1]">
+  <test name="Regression suite 1(failed)">
+    <classes>
+      <class name="ReportTestPackage.clsPawasp">
+        <parameter name="password" value="biteam"/>
+        <parameter name="url" value="http://tableau.prod.hs18.lan:8000/#/signin"/>
+        <parameter name="username" value="pawasp"/>
+        <methods>
+          <include name="TestLogin" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- ReportTestPackage.clsPawasp -->
+    </classes>
+  </test> <!-- Regression suite 1(failed) -->
+</suite> <!-- Failed suite [example suite 1] -->

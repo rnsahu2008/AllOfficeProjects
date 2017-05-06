@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" verbose="2" name="Failed suite [MainSuite5]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="src.Screenshot"/>
+  </listeners>
+  <test name="GCFreebie(failed)">
+    <classes>
+      <class name="src.GCFreebieTest">
+        <methods>
+          <include name="driverClose"/>
+          <include name="gcFreebieCheck" invocation-numbers="0"/>
+          <include name="setDriver"/>
+        </methods>
+      </class> <!-- src.GCFreebieTest -->
+    </classes>
+  </test> <!-- GCFreebie(failed) -->
+</suite> <!-- Failed suite [MainSuite5] -->

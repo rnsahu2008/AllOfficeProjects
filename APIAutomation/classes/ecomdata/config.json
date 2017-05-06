@@ -1,0 +1,38 @@
+{
+    
+"REG": {
+       "AUTH_URL": "https://auth.livecareer.com/oAuth/Token",
+       "BASE_URL": "http://api-regression.ecom.livecareer.com",
+       "SQL_HOST": "208.96.29.87",
+       "SQL_PORT": "1433",
+       "SQL_DB_NAME": "Ecommerce",
+       "SQL_USER": "admin",
+       "SQL_PASSWORD": "3c0mm3rc3@1"
+   },
+   "DEV": {
+       "AUTH_URL": "https://auth.livecareer.com/oAuth/Token",
+       "BASE_URL": "http://api-dev5.ecom.livecareer.com",
+       "SQL_HOST": "208.96.29.86",
+       "SQL_PORT": "1433",
+       "SQL_DB_NAME": "Ecommerce",
+       "SQL_USER": "admin",
+       "SQL_PASSWORD": "3c0mm3rc3@1"
+    },
+    "STG": {
+        "BASE_URL": "",
+        "SQL_HOST": "",
+        "SQL_PORT": "",
+        "SQL_DB_NAME": "",
+        "SQL_USER": "",
+        "SQL_PASSWORD": ""
+    },
+   "Sandbox": {
+       "AUTH_URL": "https://auth.livecareer.com/oAuth/Token",
+       "BASE_URL": "http://api-sandbox-ecom.livecareer.com",
+       "SQL_HOST": "67.22.105.3",
+       "SQL_PORT": "1433",
+       "SQL_DB_NAME": "Ecommerce",
+       "SQL_USER": "rajan",
+       "SQL_PASSWORD": "forest$1234"
+    }
+}

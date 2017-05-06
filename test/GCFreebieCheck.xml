@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite preserve-order="true" name="MainSuite5" parallel="false" verbose ="2" thread-count="2">
+
+
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter">
+         
+       <sysproperty key="org.uncommons.reportng.show-expected-exceptions" value="true"/>
+       <sysproperty key="org.uncommons.reportng.velocity-log" value="true"/>   
+       <sysproperty key="org.uncommons.reportng.escape-output" value="false" />    
+      </listener>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="src.Screenshot"/>
+      
+
+</listeners>
+<test name="GCFreebie" preserve-order="true">
+  
+    <classes>
+     
+       <class name="src.GCFreebieTest">
+       <methods>
+ 	    	<include name="gcFreebieCheck"></include>
+    	  
+       </methods>
+        </class> 
+        </classes>
+ 
+  </test>
+
+</suite> <!-- Suite -->

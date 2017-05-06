@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" parallel="none">
+  <test name="Test(failed)" parallel="none">
+    <classes>
+      <class name="src.CourierTrackDataCreation">
+        <methods>
+          <include name="forwardCourier"/>
+          <include name="Reverse"/>
+          <include name="setDriver"/>
+          <include name="NDR"/>
+        </methods>
+      </class> <!-- src.CourierTrackDataCreation -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

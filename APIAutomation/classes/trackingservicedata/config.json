@@ -1,0 +1,37 @@
+{
+    "REG": {
+        "AUTH_URL": "http://livecareer-auth-dev.cloudapp.net/oauth/token",
+        "BASE_URL": "http://api-reg-tracking.livecareer.com",
+        "SQL_HOST": "208.96.29.86",
+        "SQL_PORT": "1444",
+        "SQL_DB_NAME": "Livecareer",
+        "SQL_USER": "dev_rd",
+        "SQL_PASSWORD": "1zWjyb7V#"
+    },
+    "DEV": {
+        "AUTH_URL": "http://reg-livecareer-auth.cloudapp.net/oauth/token",
+        "BASE_URL": "http://api-dev-tracking.livecareer.com",
+        "SQL_HOST": "173.1.160.5",
+        "SQL_PORT": "1433",
+        "SQL_DB_NAME": "Livecareer",
+        "SQL_USER": "dev",
+        "SQL_PASSWORD": "1zWjyb7V#"
+    },
+    "STG": {
+        "BASE_URL": "http://api-tracking.livecareer.com",
+        "SQL_HOST": "",
+        "SQL_PORT": "",
+        "SQL_DB_NAME": "Livecareer",
+        "SQL_USER": "prod",
+        "SQL_PASSWORD": "1zWjyb7V#"
+    },
+    "Local": {
+        "AUTH_URL": "http://test-livecareer-auth.cloudapp.net/oauth/token",
+        "BASE_URL": "http://localhost:49336",
+        "SQL_HOST": "tabaha-del4",
+        "SQL_PORT": "",
+        "SQL_DB_NAME": "Livecareer",
+        "SQL_USER": "sa",
+        "SQL_PASSWORD": "tabaha100"
+    },
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="example suite 1" verbose="1" >
+  <test name="Regression suite 1" >
+     
+    <classes>
+      <class name="ReportTestPackage.clsPawasp">
+       <methods>
+       <parameter name="url" value="http://tableau.prod.hs18.lan:8000/#/signin"/>
+       <parameter name="username" value="pawasp"/>
+       <parameter name="password" value="biteam"/> 
+       <include name="TestLogin"></include>
+        </methods>
+          </class> 
+      
+      
+       </classes>
+ </test>
+</suite>

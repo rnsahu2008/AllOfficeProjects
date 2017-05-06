@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="TestService" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" id="7f475c29-66b4-4c3c-93e0-00fa9e94e730" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://impl.catalogueoffer.homeshop18.com/}ServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer?wsdl" id="a4dbf0c0-bf62-47d3-afe6-e1a861707bfa" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer?wsdl"><con:part><con:url>http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ServiceImplService" targetNamespace="http://impl.catalogueoffer.homeshop18.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://impl.catalogueoffer.homeshop18.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://impl.catalogueoffer.homeshop18.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getItemResponse" type="tns:getItemResponse"/>
+      <xs:element name="getItemResponseResponse" type="tns:getItemResponseResponse"/>
+      <xs:element name="getProductLiteResponse" type="tns:getProductLiteResponse"/>
+      <xs:element name="getProductLiteResponseResponse" type="tns:getProductLiteResponseResponse"/>
+      <xs:element name="getProductResponse" type="tns:getProductResponse"/>
+      <xs:element name="getProductResponseResponse" type="tns:getProductResponseResponse"/>
+      <xs:complexType name="getProductResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marketPlaceId" type="tns:MarketplaceId"/>
+          <xs:element minOccurs="0" name="merchantId" type="tns:MerchantId"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productLiteRequests" type="tns:productLiteRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MarketplaceId">
+        <xs:complexContent>
+          <xs:extension base="tns:IntId">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="IntId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="value" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MerchantId">
+        <xs:complexContent>
+          <xs:extension base="tns:IntId">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="productLiteRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productId" type="tns:ProductId"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductId">
+        <xs:complexContent>
+          <xs:extension base="tns:Id">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Id">
+        <xs:sequence>
+          <xs:element name="value" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductResponseResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:productResponseWrapper"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productResponseWrapper">
+        <xs:complexContent>
+          <xs:extension base="tns:serviceResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="productDeliveryTimeResponse" type="tns:productDeliveryTimeResponse"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="serviceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productData" type="tns:productData"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productDeliveryTimeResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="itemDeliveryTimeResponses" nillable="true" type="tns:itemDeliveryTimeResponse"/>
+              <xs:element minOccurs="0" name="productId" type="tns:ProductId"/>
+              <xs:element minOccurs="0" name="taxInfo" type="tns:taxInfo"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType abstract="true" name="genericResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCodes" type="tns:errorCodes"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="errors" nillable="true" type="tns:errorContainer"/>
+          <xs:element minOccurs="0" name="isValidId" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemDeliveryTimeResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:itemResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="deliveryData" type="tns:deliveryData"/>
+              <xs:element minOccurs="0" name="itemId" type="tns:ItemId"/>
+              <xs:element minOccurs="0" name="itemSellerData" type="tns:itemSellerData"/>
+              <xs:element minOccurs="0" name="sla" type="tns:sla"/>
+              <xs:element minOccurs="0" name="suppliedQuantity" type="xs:int"/>
+              <xs:element minOccurs="0" name="suppliedZipCode" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="itemResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="itemStockData" type="tns:itemStockData"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType abstract="true" name="response">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="additionalCharges" type="tns:additionalCharges"/>
+              <xs:element minOccurs="0" name="launchData" type="tns:launchData"/>
+              <xs:element minOccurs="0" name="price" type="tns:price"/>
+              <xs:element minOccurs="0" name="tax" type="tns:tax"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="deliveryData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bagSize" type="xs:string"/>
+          <xs:element minOccurs="0" name="categoryId" type="xs:long"/>
+          <xs:element minOccurs="0" name="cndSDShipper" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryCityGroupId" type="xs:long"/>
+          <xs:element minOccurs="0" name="deliveryCities" type="xs:string"/>
+          <xs:element minOccurs="0" name="deliveryTimeFrame" type="xs:string"/>
+          <xs:element minOccurs="0" name="dispatchPoint" type="xs:string"/>
+          <xs:element minOccurs="0" name="expressDeliveryCities" type="xs:string"/>
+          <xs:element minOccurs="0" name="isExpressDelivered" type="xs:string"/>
+          <xs:element minOccurs="0" name="isPrefDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="isReversePickupAllowed" type="xs:string"/>
+          <xs:element minOccurs="0" name="reversePickup" type="xs:string"/>
+          <xs:element minOccurs="0" name="shipmentDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="skuCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ItemId">
+        <xs:complexContent>
+          <xs:extension base="tns:Id">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="itemSellerData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isSurfaceCod" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="sellerCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerComPerc" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerCommValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerFirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerId" type="xs:long"/>
+          <xs:element minOccurs="0" name="sellerLastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerLegalName" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerMiddleName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sla">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="courierId" type="xs:long"/>
+          <xs:element minOccurs="0" name="delieveryText" type="xs:string"/>
+          <xs:element minOccurs="0" name="expectedDeliveryDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="isPaymentModeAvailable" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="maxShipDays" type="xs:int"/>
+          <xs:element minOccurs="0" name="maxShipHours" type="xs:int"/>
+          <xs:element minOccurs="0" name="minShipDays" type="xs:int"/>
+          <xs:element minOccurs="0" name="minShipHours" type="xs:int"/>
+          <xs:element name="surfaceCod" type="xs:boolean"/>
+          <xs:element name="valid" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemStockData">
+        <xs:complexContent>
+          <xs:extension base="tns:stockData">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="inventory" type="tns:inventory"/>
+              <xs:element minOccurs="0" name="isServiceable" type="xs:boolean"/>
+              <xs:element minOccurs="0" name="isShippable" type="xs:boolean"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType abstract="true" name="stockData">
+        <xs:sequence>
+          <xs:element name="isValid" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="totalStockQuantity" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inventory">
+        <xs:sequence>
+          <xs:element name="advInv" type="xs:boolean"/>
+          <xs:element name="backOrderedInv" type="xs:boolean"/>
+          <xs:element name="itemId" type="xs:long"/>
+          <xs:element minOccurs="0" name="shippingMode" type="tns:shippingMode"/>
+          <xs:element name="siteId" type="xs:long"/>
+          <xs:element name="siteQuantity" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="additionalCharges">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="emiPeriod" type="xs:int"/>
+          <xs:element minOccurs="0" name="giftWrapCharge" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="isGiftWrap" type="xs:string"/>
+          <xs:element minOccurs="0" name="shippingChargeInPerc" type="xs:string"/>
+          <xs:element minOccurs="0" name="shippingCharges" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="launchData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="inventoryStatus" type="tns:inventoryStatus"/>
+          <xs:element minOccurs="0" name="launchDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="launchMessage" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="price">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="basePrice" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="mrp" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="sellingPrice" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tax">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="taxValue" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="errorContainer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="errorData" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="taxInfo">
+        <xs:sequence>
+          <xs:element name="taxApplicable" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="taxDisclaimer" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="additionalCharges" type="tns:additionalCharges"/>
+          <xs:element minOccurs="0" name="errorCode" type="tns:errorCodes"/>
+          <xs:element minOccurs="0" name="isCombo" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="itemDataList" nillable="true" type="tns:itemData"/>
+          <xs:element minOccurs="0" name="productBasicData" type="tns:productBasicData"/>
+          <xs:element minOccurs="0" name="productBrand" type="tns:productBrand"/>
+          <xs:element minOccurs="0" name="productCategory" type="tns:productCategory"/>
+          <xs:element minOccurs="0" name="productConstantData" type="tns:productConstantData"/>
+          <xs:element minOccurs="0" name="productDescription" type="tns:productDescription"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productFreebies" nillable="true" type="tns:productFreebie"/>
+          <xs:element minOccurs="0" name="productId" type="tns:ProductId"/>
+          <xs:element minOccurs="0" name="productMedia" type="tns:productMedia"/>
+          <xs:element minOccurs="0" name="productMetaData" type="tns:productMetaData"/>
+          <xs:element minOccurs="0" name="productPrice" type="tns:productPrice"/>
+          <xs:element minOccurs="0" name="productStatus" type="tns:productStatus"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="relatedProducts" nillable="true" type="tns:relatedProducts"/>
+          <xs:element minOccurs="0" name="sellerInformation" type="tns:sellerInformation"/>
+          <xs:element minOccurs="0" name="taxInfo" type="tns:taxInfo"/>
+          <xs:element minOccurs="0" name="tsvInformation" type="tns:tsvInformation"/>
+          <xs:element minOccurs="0" name="valid" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="isActive" type="xs:string"/>
+          <xs:element minOccurs="0" name="itemId" type="tns:ItemId"/>
+          <xs:element minOccurs="0" name="itemMedia" type="tns:itemMedia"/>
+          <xs:element minOccurs="0" name="itemName" type="xs:string"/>
+          <xs:element minOccurs="0" name="itemPriceAndCharges" type="tns:itemPriceAndCharges"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="itemVariants" nillable="true" type="tns:itemVariants"/>
+          <xs:element minOccurs="0" name="maxOrderableQuantity" type="xs:int"/>
+          <xs:element minOccurs="0" name="skuCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemMedia">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="largeImageList" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="media" type="tns:media"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="mediumImageList" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="pilImage" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="smallImageList" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="media">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="imagesWithOrientation" nillable="true" type="tns:imagesWithOrientation"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="imagesWithSizes" nillable="true" type="tns:imagesWithSize"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="rawMedia" nillable="true" type="tns:unOrderedMedia"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="imagesWithOrientation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="imageOrientationEnum" type="tns:imageOrientationEnum"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="refinedMedia" nillable="true" type="tns:refinedMedia"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="refinedMedia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="aspectRatio" type="xs:string"/>
+          <xs:element minOccurs="0" name="imageUrl" type="xs:string"/>
+          <xs:element minOccurs="0" name="isDataMarketplaceExclusive" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="isDefault" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="orientation" type="tns:imageOrientationEnum"/>
+          <xs:element minOccurs="0" name="size" type="tns:imageSizeEnum"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="imagesWithSize">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="imageSizeEnum" type="tns:imageSizeEnum"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="refinedMedia" nillable="true" type="tns:refinedMedia"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="unOrderedMedia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="groupId" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="refinedMedia" nillable="true" type="tns:refinedMedia"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemPriceAndCharges">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isGiftWrap" type="xs:string"/>
+          <xs:element minOccurs="0" name="itemCharges" type="tns:itemCharges"/>
+          <xs:element minOccurs="0" name="itemId" type="tns:ItemId"/>
+          <xs:element minOccurs="0" name="itemPrice" type="tns:itemPrice"/>
+          <xs:element minOccurs="0" name="tax" type="tns:tax"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemCharges">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="giftWrapCharge" type="xs:int"/>
+          <xs:element minOccurs="0" name="shippingCharge" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemPrice">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="basePrice" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="mrp" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="priceVal" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="priceValueType" type="xs:long"/>
+          <xs:element minOccurs="0" name="sellingPrice" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemVariants">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amtImage" type="xs:string"/>
+          <xs:element minOccurs="0" name="itemAmtId" type="xs:long"/>
+          <xs:element minOccurs="0" name="itemAmtName" type="xs:string"/>
+          <xs:element minOccurs="0" name="itemAmtValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="sequence" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productBasicData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attributeGroupId" type="xs:long"/>
+          <xs:element minOccurs="0" name="catalogueId" type="xs:long"/>
+          <xs:element minOccurs="0" name="catalogueName" type="xs:string"/>
+          <xs:element minOccurs="0" name="mobileProductTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="productName" type="xs:string"/>
+          <xs:element minOccurs="0" name="productShortCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="productTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="subTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="tvRO" type="xs:string"/>
+          <xs:element minOccurs="0" name="warranty" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productBrand">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="brandCategoryId" type="xs:long"/>
+          <xs:element minOccurs="0" name="brandCategoryName" type="xs:string"/>
+          <xs:element minOccurs="0" name="brandId" type="xs:long"/>
+          <xs:element minOccurs="0" name="brandMedia" type="tns:brandMedia"/>
+          <xs:element minOccurs="0" name="brandName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="brandMedia">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="brandImages" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="productMobileSizeChart" type="xs:string"/>
+          <xs:element minOccurs="0" name="productSizeChart" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productCategory">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categoryId" type="xs:long"/>
+          <xs:element minOccurs="0" name="categoryName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productConstantData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cctACode" type="xs:string"/>
+          <xs:element minOccurs="0" name="cctNCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="channelId" type="xs:string"/>
+          <xs:element minOccurs="0" name="cndPftType" type="xs:string"/>
+          <xs:element minOccurs="0" name="isOrderEmail" type="xs:string"/>
+          <xs:element minOccurs="0" name="isRenewType" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymentActRfnum" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymentCcgRfnum" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymentDptRfnum" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productDescription">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alert" type="xs:string"/>
+          <xs:element minOccurs="0" name="crmDesc" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="descriptionFormatEnum" type="tns:descriptionFormatEnum"/>
+          <xs:element minOccurs="0" name="features" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="filters" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="keyDescription" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="keyFeatures" nillable="true" type="tns:keyFeature"/>
+          <xs:element minOccurs="0" name="keywordGroupId" type="xs:long"/>
+          <xs:element minOccurs="0" name="keywordGroupName" type="xs:string"/>
+          <xs:element minOccurs="0" name="metaDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="metaTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="mobileProductDescription" type="tns:mobileProductDescription"/>
+          <xs:element minOccurs="0" name="overView" type="tns:overView"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="pktValuesbyKmtSequence" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productAttribute" nillable="true" type="tns:productAttribute"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productMetaKeyWord" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="productTechDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="promotionalDesc" type="xs:string"/>
+          <xs:element minOccurs="0" name="rssKeyword" type="xs:string"/>
+          <xs:element minOccurs="0" name="specialDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="specification" type="tns:specification"/>
+          <xs:element minOccurs="0" name="spotLight1" type="xs:string"/>
+          <xs:element minOccurs="0" name="spotLight2" type="xs:string"/>
+          <xs:element minOccurs="0" name="spotLight3" type="xs:string"/>
+          <xs:element minOccurs="0" name="tsvDescription" type="tns:tsvDescription"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="keyFeature">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="keyFeature" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mobileProductDescription">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="keyFeatures" type="xs:string"/>
+          <xs:element minOccurs="0" name="specifications" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="overView">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="overView" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productAttribute">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="attributValue" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="attributeName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="specification">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="htmlSpecification" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tsvDescription">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="keyValuePair" nillable="true" type="tns:keyValuePair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="keyValuePair">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="key" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productFreebie">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="freebieCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="freebieTypeEnum" type="tns:freebieTypeEnum"/>
+          <xs:element minOccurs="0" name="freebies" type="xs:string"/>
+          <xs:element minOccurs="0" name="isActive" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="isDataMarketplaceExclusive" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productFreebieImages" nillable="true" type="tns:productFreebieImage"/>
+          <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productFreebieImage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="freebieImage" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productMedia">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="largeImageList" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="media" type="tns:media"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="mediumImageList" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="pbilImage1" type="xs:string"/>
+          <xs:element minOccurs="0" name="pbilImageTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="productLogo" type="xs:string"/>
+          <xs:element minOccurs="0" name="productLogoTitle" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productVideo" nillable="true" type="tns:productVideo"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="smallImageList" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="videoTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="videolink" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productVideo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isDataMarketplaceExclusive" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="isDefault" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="videoUrl" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productMetaData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="salesRank" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productPrice">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="basePrice" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="mrp" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="sellingPrice" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deleted" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="isActive" type="xs:string"/>
+          <xs:element minOccurs="0" name="isBuyAndSell" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="isSellable" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="moderStatus" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="moderres" type="xs:long"/>
+          <xs:element minOccurs="0" name="sourceEnum" type="tns:sourceEnum"/>
+          <xs:element minOccurs="0" name="sourceMarketplaceId" type="tns:MarketplaceId"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="visibleMarketPlace" nillable="true" type="tns:MarketplaceId"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="visibleMarketPlaceEnums" nillable="true" type="tns:visibleMarketPlaceEnum"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="relatedProducts">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productIds" nillable="true" type="tns:ProductId"/>
+          <xs:element minOccurs="0" name="relatedProductEnum" type="tns:relatedProductEnum"/>
+          <xs:element minOccurs="0" name="relationTitle" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sellerInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isSurface" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="sellerCityId" type="xs:long"/>
+          <xs:element minOccurs="0" name="sellerCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerComPerc" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerCommValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerFName" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerId" type="xs:long"/>
+          <xs:element minOccurs="0" name="sellerLName" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerLegalName" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerMName" type="xs:string"/>
+          <xs:element minOccurs="0" name="sellerName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tsvInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="tsvType" type="tns:tsvType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductLiteResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marketPlaceId" type="tns:MarketplaceId"/>
+          <xs:element minOccurs="0" name="merchantId" type="tns:MerchantId"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productLiteRequests" type="tns:productLiteRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductLiteResponseResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:productLiteResponseWrapper"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productLiteResponseWrapper">
+        <xs:complexContent>
+          <xs:extension base="tns:serviceResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="productLiteResponse" type="tns:productLiteResponse"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="productLiteResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:productResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="productId" type="tns:ProductId"/>
+              <xs:element minOccurs="0" name="suppliedQuantity" type="xs:int"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="productResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="productStockData" type="tns:productStockData"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="productStockData">
+        <xs:complexContent>
+          <xs:extension base="tns:stockData">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getItemResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marketPlaceId" type="tns:MarketplaceId"/>
+          <xs:element minOccurs="0" name="merchantId" type="tns:MerchantId"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="itemLiteRequests" type="tns:itemLiteRequest"/>
+          <xs:element minOccurs="0" name="pinCode" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemLiteRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="itemId" type="tns:ItemId"/>
+          <xs:element minOccurs="0" name="paymentMode" type="tns:paymentMode"/>
+          <xs:element minOccurs="0" name="quantity" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getItemResponseResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:itemResponseWrapper"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemResponseWrapper">
+        <xs:complexContent>
+          <xs:extension base="tns:serviceResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="itemDeliveryTimeResponse" type="tns:itemDeliveryTimeResponse"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:simpleType name="shippingMode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AIR"/>
+          <xs:enumeration value="SURFACE"/>
+          <xs:enumeration value="BOTH"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="inventoryStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PRE_ORDER"/>
+          <xs:enumeration value="FORTH_COMING"/>
+          <xs:enumeration value="RELEASED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="errorCodes">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="INVALID_USER_ID"/>
+          <xs:enumeration value="INVALID_MOBILE_NUMBER"/>
+          <xs:enumeration value="INVALID_SUBORDER_ID"/>
+          <xs:enumeration value="INVALID_MARKET_PLACE_ID"/>
+          <xs:enumeration value="INVALID_ADDRESS_ID"/>
+          <xs:enumeration value="INVALID_CREATED_DATE"/>
+          <xs:enumeration value="INVALID_CREATED_BY"/>
+          <xs:enumeration value="INVALID_MODIFIED_DATE"/>
+          <xs:enumeration value="INVALID_MODIFIED_BY"/>
+          <xs:enumeration value="INTERNAL_SERVICE_ERROR"/>
+          <xs:enumeration value="INVALID_OPERATION"/>
+          <xs:enumeration value="DOZER_ERROR"/>
+          <xs:enumeration value="DB_EXCEPTION"/>
+          <xs:enumeration value="DEPENDENT_SERVICE_EXCEPTION"/>
+          <xs:enumeration value="ACCOUNT_NOT_VERIFIED"/>
+          <xs:enumeration value="ACCOUNT_DISABLED"/>
+          <xs:enumeration value="MOBILE_NUMBER_ALREADY_EXISTS"/>
+          <xs:enumeration value="RECEIVE_TIMEOUT"/>
+          <xs:enumeration value="CONNECTION_TIMEOUT"/>
+          <xs:enumeration value="RECEIVE_TIMEOUT_IS_NULL_OR_EMPTY"/>
+          <xs:enumeration value="CONNECTION_TIMEOUT_IS_NULL_OR_EMPTY"/>
+          <xs:enumeration value="SERVICE_PROXY_CLIENT_NOT_INITIALIZED"/>
+          <xs:enumeration value="MALFORMED_URL"/>
+          <xs:enumeration value="CUSTOMER_SERVICE_ERROR"/>
+          <xs:enumeration value="DUPLICATE_SUPPORT_TICKET"/>
+          <xs:enumeration value="SUPPORT_TICKET_CLOSED_FOR_EDITING"/>
+          <xs:enumeration value="INVALID_SUPPORT_TICKET_CONFIG"/>
+          <xs:enumeration value="INVALID_CHAT_MESSAGE"/>
+          <xs:enumeration value="INVALID_USER_SELECTED_ISSUE_ID"/>
+          <xs:enumeration value="INVALID_USER_LOGIN_ID"/>
+          <xs:enumeration value="INVALID_SUPPORT_TICKET_AUTHOR"/>
+          <xs:enumeration value="INVALID_MESSAGE_DATA"/>
+          <xs:enumeration value="INVALID_EMAIL_ID"/>
+          <xs:enumeration value="INVALID_CITY"/>
+          <xs:enumeration value="INVALID_STATE"/>
+          <xs:enumeration value="INVALID_COUNTRY"/>
+          <xs:enumeration value="INVALID_FIRST_NAME"/>
+          <xs:enumeration value="INVALID_LAST_NAME"/>
+          <xs:enumeration value="INVALID_ZIPCODE"/>
+          <xs:enumeration value="INVALID_ADDRESS_LINE"/>
+          <xs:enumeration value="INVALID_USER_AND_ADDRESS_COMBINATION"/>
+          <xs:enumeration value="INVALID_CALLER_NUMBER"/>
+          <xs:enumeration value="INVALID_TITLE"/>
+          <xs:enumeration value="INVALID_USERNAME_OR_PASSWORD"/>
+          <xs:enumeration value="INVALID_OLD_PASSWORD"/>
+          <xs:enumeration value="FORCED_TO_CHANGE_PASSWORD"/>
+          <xs:enumeration value="USER_HAS_NOT_ACTIVATED_ACCOUNT"/>
+          <xs:enumeration value="INVALID_TOKEN"/>
+          <xs:enumeration value="INVALID_MARRITAL_STATUS"/>
+          <xs:enumeration value="TOKEN_EXPIRED"/>
+          <xs:enumeration value="INVALID_IDENTITY_TYPE"/>
+          <xs:enumeration value="BILLING_ADDRESS_ALREADY_EXISTS"/>
+          <xs:enumeration value="INVALID_PASSWORD_LENGTH"/>
+          <xs:enumeration value="NULL_ADDRESS"/>
+          <xs:enumeration value="INVALID_SHIPPING_ADDRESS"/>
+          <xs:enumeration value="INVALID_BILLING_ADDRESS"/>
+          <xs:enumeration value="INVALID_EXPRESS_CHECK_OUT_ADDRESS"/>
+          <xs:enumeration value="INVALID_DEFAULT_SHIPPING_ADDRESS"/>
+          <xs:enumeration value="INVALID_EDUCATION_ID"/>
+          <xs:enumeration value="INVALID_ANNUAL_SALARY_ID"/>
+          <xs:enumeration value="NULL_PROFILE"/>
+          <xs:enumeration value="USER_DOES_NOT_EXISTS"/>
+          <xs:enumeration value="EXPRESS_CHECKOUT_NOT_ENABLED"/>
+          <xs:enumeration value="EMAIL_DOES_NOT_EXISTS"/>
+          <xs:enumeration value="EMAIL_ID_ALREADY_EXISTS"/>
+          <xs:enumeration value="TOKEN_ALREADY_USED"/>
+          <xs:enumeration value="INVALID_PREFERENCE_NAME"/>
+          <xs:enumeration value="INVALID_PREFERENCE_ID"/>
+          <xs:enumeration value="INVALID_SUBPREFERENCE_NAME"/>
+          <xs:enumeration value="INVALID_SUBPREFERENCE_ID"/>
+          <xs:enumeration value="INVALID_PREFERENCE_DESCRIPTION"/>
+          <xs:enumeration value="INVALID_SUBPREFERENCE"/>
+          <xs:enumeration value="INVALID_PREFERENCE"/>
+          <xs:enumeration value="INVALID_DEFAULT_SUBPREFERENCE_VALUE"/>
+          <xs:enumeration value="INVALID_SUBPREFERENCE_VALUES"/>
+          <xs:enumeration value="USER_PREFERENCE_DOES_NOT_EXISTS"/>
+          <xs:enumeration value="MERCHANT_ID_CANNOT_BE_NULL"/>
+          <xs:enumeration value="MARKET_PLACE_ID_CANNOT_BE_NULL"/>
+          <xs:enumeration value="USER_ID_CANNOT_BE_NULL"/>
+          <xs:enumeration value="ITEM_ID_CANNOT_BE_NULL"/>
+          <xs:enumeration value="ORDER_ID_CANNOT_BE_NULL"/>
+          <xs:enumeration value="PRODUCT_ID_CANNOT_BE_NULL"/>
+          <xs:enumeration value="ORDER_CANNOT_BE_NULL"/>
+          <xs:enumeration value="PRODUCT_LIST_CANNOT_BE_NULL"/>
+          <xs:enumeration value="PRODUCT_LIST_ATLEAST_ONE_ELEMENT"/>
+          <xs:enumeration value="ITEM_LIST_CANNOT_BE_NULL"/>
+          <xs:enumeration value="ITEM_LIST_ATLEAST_ONE_ELEMENT"/>
+          <xs:enumeration value="ORDER_IS_INVALID"/>
+          <xs:enumeration value="BOOLEAN_VALUE_IS_INVALID"/>
+          <xs:enumeration value="PAYMENT_MODE_CANNOT_BE_NULL"/>
+          <xs:enumeration value="BANK_NAME_IS_INVALID"/>
+          <xs:enumeration value="CVV_NUMBER_IS_INVALID"/>
+          <xs:enumeration value="CARD_NUMBER_IS_INVALID"/>
+          <xs:enumeration value="EXPIRY_DATE_IS_INVALID"/>
+          <xs:enumeration value="CARD_TYPE_IS_INVALID"/>
+          <xs:enumeration value="CARD_CANNOT_BE_NULL"/>
+          <xs:enumeration value="SUBORDER_CANNOT_BE_EMPTY_NULL"/>
+          <xs:enumeration value="ZIP_CODE_CANNOT_BE_EMPTY_NULL"/>
+          <xs:enumeration value="PRICING_CANNOT_BE_NULL"/>
+          <xs:enumeration value="INVALID_PRICE"/>
+          <xs:enumeration value="INVALID_ADDRESS"/>
+          <xs:enumeration value="TEMP_ORDER_ID_CANNOT_BE_NULL"/>
+          <xs:enumeration value="NOT_VALID"/>
+          <xs:enumeration value="EXPIRED"/>
+          <xs:enumeration value="INACTIVE"/>
+          <xs:enumeration value="FUTURE_CODE"/>
+          <xs:enumeration value="ALREADY_USED"/>
+          <xs:enumeration value="NOT_FOR_CRMS"/>
+          <xs:enumeration value="MAX_USED"/>
+          <xs:enumeration value="NOT_ASSIGNED"/>
+          <xs:enumeration value="LESS_CART_VALUE"/>
+          <xs:enumeration value="NO_CART_ITEM_APPLICABLE"/>
+          <xs:enumeration value="BALANCE_LEFT"/>
+          <xs:enumeration value="SUCCESS"/>
+          <xs:enumeration value="LOCKED"/>
+          <xs:enumeration value="NOT_COD"/>
+          <xs:enumeration value="GC_LESS_ORDER"/>
+          <xs:enumeration value="NOT_GIFT_COUPON"/>
+          <xs:enumeration value="CHANGED"/>
+          <xs:enumeration value="DISCOUNT_NULL"/>
+          <xs:enumeration value="PRODUCT_NOT_FOUND"/>
+          <xs:enumeration value="ITEM_NOT_FOUND"/>
+          <xs:enumeration value="INVALID_PRODUCT_ID"/>
+          <xs:enumeration value="INVALID_ITEM_ID"/>
+          <xs:enumeration value="INVALID_MERCHANT_ID"/>
+          <xs:enumeration value="PRODUCT_ID_LIST_IS_NULL_OR_EMPTY"/>
+          <xs:enumeration value="ITEM_ID_LIST_IS_NULL_OR_EMPTY"/>
+          <xs:enumeration value="INVALID_QUANTITY"/>
+          <xs:enumeration value="CATALOGUE_SERVICE_EXCEPTION"/>
+          <xs:enumeration value="OFFER_API_EXCEPTION"/>
+          <xs:enumeration value="FULFILLMENT_SERVICE_EXCEPTION"/>
+          <xs:enumeration value="MARKETPLACE_INVALID"/>
+          <xs:enumeration value="INVALID_PINCODE"/>
+          <xs:enumeration value="INVALID_ARGUMENT_EXCEPTION"/>
+          <xs:enumeration value="PROMOTION_NAME_NULL"/>
+          <xs:enumeration value="PROMOTION_NAME_EMPTY"/>
+          <xs:enumeration value="PROMOTION_TYPE_NULL"/>
+          <xs:enumeration value="PROMOTION_VALUE_NULL"/>
+          <xs:enumeration value="PROMOTION_VALUE_MAX"/>
+          <xs:enumeration value="PROMORION_VALUE_MIN"/>
+          <xs:enumeration value="PROMOTION_DISCOUNT_MAX"/>
+          <xs:enumeration value="PROMOTION_DISCOUNT_MIN"/>
+          <xs:enumeration value="PROMOTION_CART_VALUE_MAX"/>
+          <xs:enumeration value="PROMOTION_CART_VALUE_MIN"/>
+          <xs:enumeration value="PROMOTION_START_NULL"/>
+          <xs:enumeration value="PROMOTION_END_NULL"/>
+          <xs:enumeration value="PROMOTION_IS_ACTIVE_NULL"/>
+          <xs:enumeration value="PROMOTION_NUMBER_OF_COUPON_NULL"/>
+          <xs:enumeration value="PROMOTION_NUMBER_OF_COUPON_MIN"/>
+          <xs:enumeration value="PROMOTION_NUMBER_OF_COUPON_MAX"/>
+          <xs:enumeration value="PROMOION_IS_LEFT_OVER_NULL"/>
+          <xs:enumeration value="PROMOTION_APPLIED_MP_MIN"/>
+          <xs:enumeration value="PROMOTION_APPLIED_MP_NULL"/>
+          <xs:enumeration value="PROMOTION_USER_TYPE_NULL"/>
+          <xs:enumeration value="PROMOTION_CAPS_ON_USER_MIN"/>
+          <xs:enumeration value="PROMOTION_CAPS_ON_USER_MAX"/>
+          <xs:enumeration value="PROMOTION_CAPS_ON_USES_MIN"/>
+          <xs:enumeration value="PROMOTION_CAPS_ON_USES_MAX"/>
+          <xs:enumeration value="PROMOTION_CREATED_BY_MIN"/>
+          <xs:enumeration value="PROMOTION_MODIFIED_BY_MIN"/>
+          <xs:enumeration value="PROMOTION_TEXT_NULL"/>
+          <xs:enumeration value="PROMOTION_TEXT_EMPTY"/>
+          <xs:enumeration value="PROMOTION_SEARCH_TEXT_NULL"/>
+          <xs:enumeration value="PROMOTION_SEARCH_TEXT_EMPTY"/>
+          <xs:enumeration value="PROMOTION_START_LESS_NOW"/>
+          <xs:enumeration value="PROMOTION_END_LESS_NOW"/>
+          <xs:enumeration value="PROMOTION_END_BEFORE_START"/>
+          <xs:enumeration value="PROMOTION_DISCOUNT_NULL_FOR_PERCENTAGE"/>
+          <xs:enumeration value="PROMOTION_NUMBER_OF_COUPON_NOT_EQUAL_COUPON_COUNT"/>
+          <xs:enumeration value="PROMOTION_USER_WITH_NO_USERID"/>
+          <xs:enumeration value="PROMOTION_GROUP_WITH_NO_GROUP"/>
+          <xs:enumeration value="PROMOTION_USER_LEFTOVER_NO_CAPS"/>
+          <xs:enumeration value="PROMOTION_GROUP_ALL_LEFOVER"/>
+          <xs:enumeration value="PROMOTION_PRODUCT_CRITERIA"/>
+          <xs:enumeration value="PROMOTION_CATEGORY_CRITERIA"/>
+          <xs:enumeration value="PROMOTION_BRAND_CRITERIA"/>
+          <xs:enumeration value="PROMOTION_SELLER_CRITERIA"/>
+          <xs:enumeration value="PROMOTION_GENERAL_CRITERIA"/>
+          <xs:enumeration value="PROMOTION_CARD_RANGE_WITH_PAYMENT_NULL"/>
+          <xs:enumeration value="PROMOTION_COUPONS_EMPTY"/>
+          <xs:enumeration value="PROMOTION_USER_WITH_GROUP"/>
+          <xs:enumeration value="PROMOTION_GROUP_WITH_USER"/>
+          <xs:enumeration value="PROMOTION_GROUP_NAME_NULL"/>
+          <xs:enumeration value="PROMOTION_GROUP_INFO_NULL"/>
+          <xs:enumeration value="PROMOTION_GROUP_INFO_VALID"/>
+          <xs:enumeration value="PROMOTION_COUPON_ISACTIVE_NULL"/>
+          <xs:enumeration value="PROMOTION_COUPON_NAME_NULL"/>
+          <xs:enumeration value="COUPON_NOT_FOUND"/>
+          <xs:enumeration value="MORE_THAN_ONE_ACTIVE_COUPON"/>
+          <xs:enumeration value="ITEMS_IN_CART_NOT_APPLICABLE"/>
+          <xs:enumeration value="NOT_APPLICABLE_FOR_MARKETPLACE"/>
+          <xs:enumeration value="COUPON_NOT_ASSIGNED_TO_ANY_MARKETPLACE"/>
+          <xs:enumeration value="COUPON_USAGE_TYPE_NOT_SPECIFIED"/>
+          <xs:enumeration value="COUPON_NOT_ASSIGNED_TO_ANY_USER_TYPE"/>
+          <xs:enumeration value="COUPON_TYPE_OR_VALUE_IS_INVALID"/>
+          <xs:enumeration value="BRAND_ID_IS_EXCLUDED"/>
+          <xs:enumeration value="BRAND_ID_IS_NOT_UNDER_INCLUSION"/>
+          <xs:enumeration value="CATALOGUE_ID_IS_EXCLUDED"/>
+          <xs:enumeration value="CATALOGUE_ID_IS_NOT_UNDER_INCLUSION"/>
+          <xs:enumeration value="SELLER_ID_IS_EXCLUDED"/>
+          <xs:enumeration value="SELLER_ID_IS_NOT_UNDER_INCLUSION"/>
+          <xs:enumeration value="PRODUCT_ID_IS_EXCLUDED"/>
+          <xs:enumeration value="PRODUCT_ID_IS_NOT_UNDER_INCLUSION"/>
+          <xs:enumeration value="PAYMENT_OPTIONS_ARE_EXCLUDED"/>
+          <xs:enumeration value="PAYMENT_OPTIONS_ARE_NOT_UNDER_INCLUSION"/>
+          <xs:enumeration value="CATEGORY_ID_IS_EXCLUDED"/>
+          <xs:enumeration value="CATEGORY_ID_IS_NOT_UNDER_INCLUSION"/>
+          <xs:enumeration value="SOURCE_MARKETPLACE_EXCLUDED"/>
+          <xs:enumeration value="INTERNAL_SERVICE_EXCEPTION"/>
+          <xs:enumeration value="CHECKOUT_PAYMENT_OPTION_NOT_SUPPORTED"/>
+          <xs:enumeration value="COUPON_IS_INACTIVE"/>
+          <xs:enumeration value="COUPON_IS_EXPIRED"/>
+          <xs:enumeration value="COUPON_IS_NOT_YET_STARTED"/>
+          <xs:enumeration value="COUPON_IS_LOCKED_FOR_USER"/>
+          <xs:enumeration value="NOT_SUPPORTED"/>
+          <xs:enumeration value="COUPON_IS_NOT_ASSIGNED_TO_THIS_USER"/>
+          <xs:enumeration value="USER_HAS_EXHAUSTED_ITS_LIMIT"/>
+          <xs:enumeration value="COUPON_HAS_BEEN_REDEEMED"/>
+          <xs:enumeration value="GIFT_PAYMENT_NOT_VALID_WITH_COUPON_TYPE"/>
+          <xs:enumeration value="GIFT_PAYMENT_UNABLE_TO_COVER_REQUEST_VALUE"/>
+          <xs:enumeration value="REQUEST_VALUE_IS_LESS_THAN_MIN_REQUIRED_CART_VALUE"/>
+          <xs:enumeration value="COUPON_IS_NOT_YET_APPROVED"/>
+          <xs:enumeration value="PROMOTION_DOESNT_HAVE_ENOUGH_BUDGET"/>
+          <xs:enumeration value="SUBORDER_DISCOUNT_LESS_THAN_THRESHOLD"/>
+          <xs:enumeration value="CARD_BIN_OR_BANK_CODE_MISMATCH"/>
+          <xs:enumeration value="EITHER_CARD_BIN_OR_BANK_CODE_IS_NULL"/>
+          <xs:enumeration value="ORDER_NOT_FOUND"/>
+          <xs:enumeration value="NULL_START_STATE_IN_PAYMENT_METADATA"/>
+          <xs:enumeration value="NO_SUBORDER_FOUND_FOR_ITEM_ID"/>
+          <xs:enumeration value="CART_NOT_FOUND"/>
+          <xs:enumeration value="INVALID_ORDER_ID"/>
+          <xs:enumeration value="INVALID_PAYMENT"/>
+          <xs:enumeration value="INVALID_CART"/>
+          <xs:enumeration value="INVALID_ITEM_QUANTITY"/>
+          <xs:enumeration value="INVALID_IS_DEFAULT"/>
+          <xs:enumeration value="ITEM_OUT_OF_STOCK_FOR_ZIP"/>
+          <xs:enumeration value="NULL_ITEM_GIFT_MESSAGE"/>
+          <xs:enumeration value="ORDER_UPDATE_FAILED"/>
+          <xs:enumeration value="CART_IS_EMPTY"/>
+          <xs:enumeration value="ERROR_TEMP_ORDER"/>
+          <xs:enumeration value="ERROR_PERMANENT_ORDER"/>
+          <xs:enumeration value="PAYMENT_FAILED"/>
+          <xs:enumeration value="NO_PAYMENT_OPTIONS_AVAILABLE"/>
+          <xs:enumeration value="NO_SUBORDER_IN_ORDER"/>
+          <xs:enumeration value="ERROR_WHILE_ACCESSING_DATABASE"/>
+          <xs:enumeration value="ITEM_OUT_OF_STOCK"/>
+          <xs:enumeration value="ITEM_PRICE_CHANGED_ERROR"/>
+          <xs:enumeration value="PAYMENT_OPTION_NOT_SUPPORTED"/>
+          <xs:enumeration value="ORDER_ID_NOT_ASSOCIATED_WITH_USER"/>
+          <xs:enumeration value="ERROR_IN_UPDATING_INVENTORY"/>
+          <xs:enumeration value="FRAUD_USER_ID"/>
+          <xs:enumeration value="FRAUD_EMAIL_ID"/>
+          <xs:enumeration value="FRAUD_CREDIT_CARD"/>
+          <xs:enumeration value="FRAUD_PHONE_NO"/>
+          <xs:enumeration value="FRAUD_MOBILE_NO"/>
+          <xs:enumeration value="FRAUD_CREDIT_CARD_PREFIX"/>
+          <xs:enumeration value="FRAUD_IP_ADDRESS"/>
+          <xs:enumeration value="ZIP_CODE_NOT_SERVICABLE"/>
+          <xs:enumeration value="ERROR_IN_GETTING_PRICES"/>
+          <xs:enumeration value="PRODUCT_IS_NOT_ASSOCIATED_WITH_MARKETPLACE"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_INVALID"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_EXPIRED"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_INACTIVE"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_CODE_INACTIVE"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_ALREADY_APPLIED"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_ZERO_BALANCE"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_INVALID_PIN"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_INVALID_ID"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_NOT_APPROVED"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_INVALID_NO_OR_PIN"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_COUNT_EXCEEDED_LIMIT"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_FUTURE_START_DATE"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_INSUFFICIENT_BALANCE"/>
+          <xs:enumeration value="E_GIFT_VOUCHER_NOT_APPLIED"/>
+          <xs:enumeration value="INVALID_EVENT_ID"/>
+          <xs:enumeration value="TAX_APPLICABLITY_CRITERIA_NOT_FOUND"/>
+          <xs:enumeration value="BASE_PRICE_NOT_NULL"/>
+          <xs:enumeration value="SKU_CATEROTY_ID_NOT_NULL"/>
+          <xs:enumeration value="STAT_ID_NOT_NULL"/>
+          <xs:enumeration value="VENDOR_ID_NOT_NULL"/>
+          <xs:enumeration value="INVALID_REQUEST"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="imageOrientationEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FRONT"/>
+          <xs:enumeration value="BACK"/>
+          <xs:enumeration value="TOP"/>
+          <xs:enumeration value="LEFT"/>
+          <xs:enumeration value="RIGHT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="imageSizeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SMALL_PDP"/>
+          <xs:enumeration value="MEDIUM_PDP"/>
+          <xs:enumeration value="LARGE_PDP"/>
+          <xs:enumeration value="SMALL_CART"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="descriptionFormatEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NEW"/>
+          <xs:enumeration value="OLD"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="freebieTypeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SHIPPABLE"/>
+          <xs:enumeration value="DISPLAY"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="sourceEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="TV"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="MOBILE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="visibleMarketPlaceEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="TV"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="MOBILE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="relatedProductEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="COMBO"/>
+          <xs:enumeration value="CROSS_SELL"/>
+          <xs:enumeration value="UP_SELL"/>
+          <xs:enumeration value="ALTERNATE_SELL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="tsvType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="IN_TSV"/>
+          <xs:enumeration value="NOT_IN_TSV"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="paymentMode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CHEQUE_DD_PICKUP_TEST"/>
+          <xs:enumeration value="MISCELLANEOUS"/>
+          <xs:enumeration value="EMI_3_CITI_CRM"/>
+          <xs:enumeration value="EMI_3_NO_EXTRA_COST_CRM"/>
+          <xs:enumeration value="EMI_3_HDFC_CREDIT_CARD_CRM"/>
+          <xs:enumeration value="CREDIT_CARD_VISA_MASTER_CRM"/>
+          <xs:enumeration value="CARD_SWIPE_ON_DELIVERY"/>
+          <xs:enumeration value="DEBIT_CARD_CRM"/>
+          <xs:enumeration value="CHEQUE_DD_PICKUP"/>
+          <xs:enumeration value="CASH_BEFORE_DELIVERY"/>
+          <xs:enumeration value="CHEQUE_DD"/>
+          <xs:enumeration value="COD"/>
+          <xs:enumeration value="GIFT_CERTIFICATE"/>
+          <xs:enumeration value="EMI_HSBC_3"/>
+          <xs:enumeration value="EMI_HSBC_6"/>
+          <xs:enumeration value="EMI_HSBC_9"/>
+          <xs:enumeration value="EMI_HSBC_12"/>
+          <xs:enumeration value="EMI_AXIS_3"/>
+          <xs:enumeration value="EMI_AXIS_6"/>
+          <xs:enumeration value="EMI_AXIS_9"/>
+          <xs:enumeration value="EMI_AXIS_12"/>
+          <xs:enumeration value="EMI_SC_3"/>
+          <xs:enumeration value="EMI_SC_6"/>
+          <xs:enumeration value="EMI_SC_9"/>
+          <xs:enumeration value="EMI_SC_12"/>
+          <xs:enumeration value="EMI_KOTAK_3"/>
+          <xs:enumeration value="EMI_KOTAK_6"/>
+          <xs:enumeration value="EMI_KOTAK_9"/>
+          <xs:enumeration value="EMI_KOTAK_12"/>
+          <xs:enumeration value="EMI_3_HDFC_CREDIT_CARD"/>
+          <xs:enumeration value="EMI_3_CITI_CREDIT_CARD"/>
+          <xs:enumeration value="EMI_6_CITI_CREDIT_CARD"/>
+          <xs:enumeration value="EMI_9_CITI_CREDIT_CARD"/>
+          <xs:enumeration value="EMI_ICICI_3"/>
+          <xs:enumeration value="EMI_ICICI_9"/>
+          <xs:enumeration value="EMI_ICICI_12"/>
+          <xs:enumeration value="EMI_ICICI_6"/>
+          <xs:enumeration value="CREDIT_CARD_VISA_MASTER"/>
+          <xs:enumeration value="DEBIT_CARD_VISA_MASTER_MAESTRO"/>
+          <xs:enumeration value="CREDIT_CARD_AMERICAN_EXPRESS"/>
+          <xs:enumeration value="INTERNET_BANKING"/>
+          <xs:enumeration value="AIRTEL_MONEY"/>
+          <xs:enumeration value="EMI_6_HDFC_CREDIT_CARD"/>
+          <xs:enumeration value="EMI_9_HDFC_CREDIT_CARD"/>
+          <xs:enumeration value="EMI_12_HDFC_CREDIT_CARD"/>
+          <xs:enumeration value="AMEX_EZECLICK"/>
+          <xs:enumeration value="SAMSUNG_EMI_12_ICICI_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_12_SC_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_12_AXIS_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_12_KOTAK_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_12_HSBC_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_6_ICICI_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_6_SC_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_6_AXIS_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_6_KOTAK_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_EMI_6_HSBC_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_DEBIT_CARD_AXIS_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_DEBIT_CARD_KOTAK_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_DEBIT_CARD_INDUSIND_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_DEBIT_CARD_SC_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_DEBIT_CARD_ICICI_THROUGH_ATOM"/>
+          <xs:enumeration value="SAMSUNG_DEBIT_CARD_CITI_THROUGH_ATOM"/>
+          <xs:enumeration value="APPLE_EMI_12_ICICI_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="APPLE_EMI_12_INDUSIND_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="APPLE_EMI_12_AXIS_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="APPLE_EMI_12_KOTAK_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="APPLE_EMI_12_CITI_CREDIT_CARD_THROUGH_ATOM"/>
+          <xs:enumeration value="CORPORATE"/>
+          <xs:enumeration value="PROMOTION"/>
+          <xs:enumeration value="AFFILIATE_PAYMENT"/>
+          <xs:enumeration value="ELETRONIC_VOUCHER"/>
+          <xs:enumeration value="PAYTM_WALLET"/>
+          <xs:enumeration value="RUPAY_DEBIT_CARDS"/>
+          <xs:enumeration value="VODAFONE_M_PESA"/>
+          <xs:enumeration value="OXIGEN"/>
+          <xs:enumeration value="ZIPCASH"/>
+          <xs:enumeration value="MOBIKWIK"/>
+          <xs:enumeration value="PAYUMONEY"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="OfferApiException" type="tns:OfferApiException"/>
+      <xs:complexType name="OfferApiException">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="errorCodes" type="tns:errorCodes"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CatalogueServiceEx" type="tns:CatalogueServiceEx"/>
+      <xs:complexType name="CatalogueServiceEx">
+        <xs:sequence>
+          <xs:element name="errorCode" nillable="true" type="tns:errorCodes"/>
+          <xs:element name="description" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InvalidArgumentEx" type="tns:InvalidArgumentEx"/>
+      <xs:complexType name="InvalidArgumentEx">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="errorCodes" type="tns:errorCodes"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CatalogueServiceException">
+    <wsdl:part element="tns:CatalogueServiceEx" name="CatalogueServiceException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductLiteResponse">
+    <wsdl:part element="tns:getProductLiteResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getItemResponseResponse">
+    <wsdl:part element="tns:getItemResponseResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getItemResponse">
+    <wsdl:part element="tns:getItemResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductResponse">
+    <wsdl:part element="tns:getProductResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductLiteResponseResponse">
+    <wsdl:part element="tns:getProductLiteResponseResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvalidArgumentException">
+    <wsdl:part element="tns:InvalidArgumentEx" name="InvalidArgumentException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductResponseResponse">
+    <wsdl:part element="tns:getProductResponseResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfferApiException">
+    <wsdl:part element="tns:OfferApiException" name="OfferApiException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="getProductResponse">
+      <wsdl:input message="tns:getProductResponse" name="getProductResponse"></wsdl:input>
+      <wsdl:output message="tns:getProductResponseResponse" name="getProductResponseResponse"></wsdl:output>
+      <wsdl:fault message="tns:CatalogueServiceException" name="CatalogueServiceException"></wsdl:fault>
+      <wsdl:fault message="tns:OfferApiException" name="OfferApiException"></wsdl:fault>
+      <wsdl:fault message="tns:InvalidArgumentException" name="InvalidArgumentException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductLiteResponse">
+      <wsdl:input message="tns:getProductLiteResponse" name="getProductLiteResponse"></wsdl:input>
+      <wsdl:output message="tns:getProductLiteResponseResponse" name="getProductLiteResponseResponse"></wsdl:output>
+      <wsdl:fault message="tns:CatalogueServiceException" name="CatalogueServiceException"></wsdl:fault>
+      <wsdl:fault message="tns:OfferApiException" name="OfferApiException"></wsdl:fault>
+      <wsdl:fault message="tns:InvalidArgumentException" name="InvalidArgumentException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getItemResponse">
+      <wsdl:input message="tns:getItemResponse" name="getItemResponse"></wsdl:input>
+      <wsdl:output message="tns:getItemResponseResponse" name="getItemResponseResponse"></wsdl:output>
+      <wsdl:fault message="tns:CatalogueServiceException" name="CatalogueServiceException"></wsdl:fault>
+      <wsdl:fault message="tns:OfferApiException" name="OfferApiException"></wsdl:fault>
+      <wsdl:fault message="tns:InvalidArgumentException" name="InvalidArgumentException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceImplServiceSoapBinding" type="tns:IService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getProductResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CatalogueServiceException">
+        <soap:fault name="CatalogueServiceException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="OfferApiException">
+        <soap:fault name="OfferApiException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault name="InvalidArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductLiteResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProductLiteResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductLiteResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CatalogueServiceException">
+        <soap:fault name="CatalogueServiceException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="OfferApiException">
+        <soap:fault name="OfferApiException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault name="InvalidArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getItemResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CatalogueServiceException">
+        <soap:fault name="CatalogueServiceException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="OfferApiException">
+        <soap:fault name="OfferApiException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault name="InvalidArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceImplService">
+    <wsdl:port binding="tns:ServiceImplServiceSoapBinding" name="ServiceImplPort">
+      <soap:address location="http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getItemResponse" bindingOperationName="getItemResponse" type="Request-Response" outputName="getItemResponseResponse" inputName="getItemResponse" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="579f53ca-db09-442a-bf12-5049c12aab80"><con:settings/><con:call name="Request 1" id="b259b13a-373d-4214-8e75-5fc871b78142"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://app02.preprod.hs18.lan:8895/api/1/fulfilment/products/offerfulfilmentDetails</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<offerFulfilmentRequest>
+<quantity>1</quantity>
+<itemId>33614557</itemId>
+<product>
+ <active>true</active>
+    <codAvailable>true</codAvailable>
+    <deleted>false</deleted>
+    <dispatchPoint>MERCHANT</dispatchPoint>
+    <itemsList>
+        <items>
+            <itemActive>true</itemActive>
+            <itemId>33614557</itemId>
+            <shippingMode>AIR</shippingMode>
+            <stockQuantity>1</stockQuantity>
+        </items>
+        <items>
+            <itemActive>true</itemActive>
+            <itemId>33614558</itemId>
+            <shippingMode>BOTH</shippingMode>
+            <stockQuantity>1</stockQuantity>
+        </items>
+    </itemsList>
+    <managedInventory>true</managedInventory>
+    <maxShipDays>2</maxShipDays>
+    <minShipDays>2</minShipDays>
+    <preorder>false</preorder>
+    <productCcgrfnum>1</productCcgrfnum>
+    <productId>32166653</productId>
+    <productSellable>false</productSellable>
+    <sellerId>2031</sellerId>
+    <sellingPrice>0.0</sellingPrice>
+    <shipperType>HS18COURIER</shipperType>
+    <shippingCharge>0.0</shippingCharge>
+</product>
+<deliveryData>
+<pincode>110008</pincode>
+</deliveryData>
+</offerFulfilmentRequest>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.catalogueoffer.homeshop18.com/IService/getItemResponse"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProductLiteResponse" bindingOperationName="getProductLiteResponse" type="Request-Response" outputName="getProductLiteResponseResponse" inputName="getProductLiteResponse" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="8d1f8e6f-ca4b-45a4-af3f-a2c2d2d01983"><con:settings/><con:call name="Request 1" id="d8e8c232-92c7-4809-be8e-902674c8eb58"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.catalogueoffer.homeshop18.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <impl:getProductLiteResponse>
+         <!--Optional:-->
+         <marketPlaceId>
+            <!--Optional:-->
+            <value>?</value>
+         </marketPlaceId>
+         <!--Optional:-->
+         <merchantId>
+            <!--Optional:-->
+            <value>?</value>
+         </merchantId>
+         <!--Zero or more repetitions:-->
+         <productLiteRequests>
+            <!--Optional:-->
+            <productId>
+               <value>?</value>
+            </productId>
+         </productLiteRequests>
+      </impl:getProductLiteResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.catalogueoffer.homeshop18.com/IService/getProductLiteResponse"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProductResponse" bindingOperationName="getProductResponse" type="Request-Response" outputName="getProductResponseResponse" inputName="getProductResponse" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="153b627d-d635-4089-9425-b62523d92867"><con:settings/><con:call name="Request 1" id="e176d746-c86f-422d-a9c4-99ed9b8c6037"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.catalogueoffer.homeshop18.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <impl:getProductResponse>
+         <!--Optional:-->
+         <marketPlaceId>
+            <!--Optional:-->
+            <value>?</value>
+         </marketPlaceId>
+         <!--Optional:-->
+         <merchantId>
+            <!--Optional:-->
+            <value>?</value>
+         </merchantId>
+         <!--Zero or more repetitions:-->
+         <productLiteRequests>
+            <!--Optional:-->
+            <productId>
+               <value>?</value>
+            </productId>
+         </productLiteRequests>
+      </impl:getProductResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.catalogueoffer.homeshop18.com/IService/getProductResponse"/></con:call></con:operation></con:interface><con:testSuite name="Smoke" id="46993370-94ce-4918-a9e0-26ccf95b8356"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="false" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Gift Charges" searchProperties="true" id="5caa4771-ff3e-4e79-949c-ac985c3ecb5f" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" name="GiftCharges" id="81052ab1-951d-4327-990d-636c3a27e2b3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceImplServiceSoapBinding</con:interface><con:operation>getItemResponse</con:operation><con:request name="GiftCharges" id="a43b2c88-fd43-458b-b993-143e66254c26"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srvc02.preprod.hs18.lan:19080/CatalogueService/catalogue-offer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.catalogueoffer.homeshop18.com/">
+  <soapenv:Header>
+   
+<appNameHeader>HS18CRM</appNameHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <impl:getItemResponse>
+         <!--Optional:-->
+         <marketPlaceId>
+            <!--Optional:-->
+            <value>1</value>
+         </marketPlaceId>
+         <!--Optional:-->
+         <merchantId>
+            <!--Optional:-->
+            <value>2031</value>
+         </merchantId>
+         <!--Zero or more repetitions:-->
+         <itemLiteRequests>
+            <!--Optional:-->
+            <itemId>
+               <value>33614557</value>
+            </itemId>
+            <!--Optional:-->
+            <paymentMode>145</paymentMode>
+            <!--Optional:-->
+            <quantity>1</quantity>
+         </itemLiteRequests>
+         <!--Optional:-->
+         <pinCode>110008</pinCode>
+      </impl:getItemResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="096bee34-f1e5-4443-8f5e-baf45468b75f"/><con:assertion type="XPath Match" name="GiftWrapCharges" id="ead68c62-b2c4-441a-a8aa-68f1a5ce0469"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//giftWrapCharge)[1]</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="XPath Match" id="f2e15f4a-1cb9-4ef4-83dc-11c22338a29f"><con:configuration/></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="ItemPropertyTransfer" id="63a6e374-a708-4ae3-8d41-82a2d69afa20"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>Itemid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GiftCharges</con:sourceStep><con:sourcePath>(//itemId/value)[1]</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>ship</con:targetStep><con:targetPath>//itemId/value</con:targetPath><con:upgraded>true</con:upgraded></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="false" transferToAll="true" entitize="false" transferChildNodes="false" ignoreEmpty="false"><con:name>shipping charges</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>JDBC Request</con:sourceStep><con:sourcePath>//ISMACT.ACTCHARGEVALUE</con:sourcePath><con:targetType>charge</con:targetType><con:targetStep>#TestSuite#</con:targetStep><con:targetPath/><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="jdbc" name="JDBC Request" id="5782a8e9-28ad-4160-8bec-0e25e3dda639"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://app06.preprod.hs18.lan:3306/hsn18db?user=hs18_dfcserver&amp;password=6F($3Rv3R!</con:connectionString><con:query>select ACTCHARGEVALUE from ISMACT a join ISMSOT p on p.SOTACTRFNUM=a.ACTRFNUM 
+				 where  p.SOTPBIRFNUM=32166653</con:query><con:properties/></con:config></con:testStep><con:testStep type="request" name="ship" id="17f156a2-a0b2-42af-98da-0965fff5e0c1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceImplServiceSoapBinding</con:interface><con:operation>getItemResponse</con:operation><con:request name="ship" id="39eb6a22-d11f-40fb-9747-928ee68d271a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.catalogueoffer.homeshop18.com/">
+  <soapenv:Header>
+   
+<appNameHeader>HS18CRM</appNameHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <impl:getItemResponse>
+         <!--Optional:-->
+         <marketPlaceId>
+            <!--Optional:-->
+            <value>1</value>
+         </marketPlaceId>
+         <!--Optional:-->
+         <merchantId>
+            <!--Optional:-->
+            <value>2031</value>
+         </merchantId>
+         <!--Zero or more repetitions:-->
+         <itemLiteRequests>
+            <!--Optional:-->
+            <itemId>
+               <value>33614557</value>
+            </itemId>
+            <!--Optional:-->
+            <paymentMode>145</paymentMode>
+            <!--Optional:-->
+            <quantity>1</quantity>
+         </itemLiteRequests>
+         <!--Optional:-->
+         <pinCode>201301</pinCode>
+      </impl:getItemResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e0d2dbdc-f6ea-418c-ab23-c5268e5dfc3e"/><con:assertion type="XPath Match" name="Shipcharge" id="c3c01062-eae4-4473-bb6d-f317a198b303"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//shippingCharges)[1]</path><content>${#TestSuite#charge}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Shipping Charges" searchProperties="true" id="a2416299-779e-4254-8b60-61da06095002"><con:settings/><con:testStep type="request" name="shipcharges" id="a886fd7f-bfcc-4b9e-bcf6-059ffd494c4c"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceImplServiceSoapBinding</con:interface><con:operation>getItemResponse</con:operation><con:request name="shipcharges" id="519bfb0b-2876-4a19-b038-c0474dc6614f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.catalogueoffer.homeshop18.com/">
+  <soapenv:Header>
+   
+<appNameHeader>HS18CRM</appNameHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <impl:getItemResponse>
+         <!--Optional:-->
+         <marketPlaceId>
+            <!--Optional:-->
+            <value>1</value>
+         </marketPlaceId>
+         <!--Optional:-->
+         <merchantId>
+            <!--Optional:-->
+            <value>2031</value>
+         </merchantId>
+         <!--Zero or more repetitions:-->
+         <itemLiteRequests>
+            <!--Optional:-->
+            <itemId>
+               <value>33614557</value>
+            </itemId>
+            <!--Optional:-->
+            <paymentMode>145</paymentMode>
+            <!--Optional:-->
+            <quantity>1</quantity>
+         </itemLiteRequests>
+         <!--Optional:-->
+         <pinCode>201301</pinCode>
+      </impl:getItemResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="682d315f-0a93-4333-9974-ae99667358dc"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Is Active" searchProperties="true" id="0857f07f-b4bd-4f01-8878-d7032e4b3286"><con:settings/><con:testStep type="request" name="Is Active" id="84450af8-d97b-4fb7-93e7-31642e01c88a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceImplServiceSoapBinding</con:interface><con:operation>getItemResponse</con:operation><con:request name="Is Active" id="fcbb0beb-4a3d-4686-b3f5-37552640cfbd"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srvc02.preprod.hs18.lan:18080/CatalogueService/catalogue-offer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.catalogueoffer.homeshop18.com/">
+  <soapenv:Header>
+   
+<appNameHeader>HS18CRM</appNameHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <impl:getItemResponse>
+         <!--Optional:-->
+         <marketPlaceId>
+            <!--Optional:-->
+            <value>1</value>
+         </marketPlaceId>
+         <!--Optional:-->
+         <merchantId>
+            <!--Optional:-->
+            <value>2031</value>
+         </merchantId>
+         <!--Zero or more repetitions:-->
+         <itemLiteRequests>
+            <!--Optional:-->
+            <itemId>
+               <value>33614557</value>
+            </itemId>
+            <!--Optional:-->
+            <paymentMode>145</paymentMode>
+            <!--Optional:-->
+            <quantity>1</quantity>
+         </itemLiteRequests>
+         <!--Optional:-->
+         <pinCode>201301</pinCode>
+      </impl:getItemResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="XPath Match" name="ISActive" id="2fa901c9-8a28-44cb-b22f-c8959bbc30d2"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='http://impl.catalogueoffer.homeshop18.com/';
+(//isActive)[1]</path><content>Y</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>charge</con:name><con:value>200</con:value></con:property></con:properties></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

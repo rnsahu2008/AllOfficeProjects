@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">example suite 1</th></tr><tr><td><a href="#t0">Regression suite 1</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">41,219</td><td></td><td></td></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">example suite 1</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Regression suite 1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">ReportTestPackage.clsPawasp</td><td><a href="#m0">TestLogin</a></td><td rowspan="1">1457430551147</td><td rowspan="1">41124</td></tr></tbody></table><h2>Regression suite 1</h2><h3 id="m0">ReportTestPackage.clsPawasp#TestLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>http://172.16.0.103:8000/#/</td><td>pawasp</td><td>biteam</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 116 milliseconds
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;HSNMM-RamNiwas&apos;, ip: &apos;10.50.33.195&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9ffbaacd-c578-4aed-a7ea-162c891e6807
+*** Element info: {Using=xpath, value=//*[starts-with(text(),&apos;Call Center Call Cost&apos;)]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at ReportTestPackage.clsPawasp.TestLogin(clsPawasp.java:99)
+Caused by: org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;HSNMM-RamNiwas&apos;, ip: &apos;10.50.33.195&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.nsCommandProcessor.prototype.execute(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12668)
+	at &lt;anonymous class&gt;.Dispatcher.executeAs/&lt;(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9511)
+	at &lt;anonymous class&gt;.Resource.prototype.handle(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9658)
+	at &lt;anonymous class&gt;.Dispatcher.prototype.dispatch(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9605)
+	at &lt;anonymous class&gt;.WebDriverServer/&lt;.handle(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12470)
+	at &lt;anonymous class&gt;.createHandlerFunc/&lt;(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+	at &lt;anonymous class&gt;.ServerHandler.prototype.handleResponse(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+	at &lt;anonymous class&gt;.Connection.prototype.process(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+	at &lt;anonymous class&gt;.RequestReader.prototype._handleResponse(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+	at &lt;anonymous class&gt;.RequestReader.prototype._processBody(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+	at &lt;anonymous class&gt;.RequestReader.prototype.onInputStreamReady(file:///C:/Users/RAM~1.SAH/AppData/Local/Temp/anonymous5986679002590208109webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p></body></html>

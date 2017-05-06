@@ -1,0 +1,29 @@
+{
+    "TEST": {
+        "AUTH_URL": "http://livecareer-auth.cloudapp.net/oAuth/Token",
+        "BASE_URL": "https://api-test-jobstore.livecareer.com:443",
+        "SQL_HOST": "",
+        "SQL_PORT": "",
+        "SQL_DB_NAME": "",
+        "SQL_USER": "",
+        "SQL_PASSWORD": ""
+    },
+    "SB": {
+        "AUTH_URL": "http://livecareer-auth.cloudapp.net/oAuth/Token",
+        "BASE_URL": "http://sandbox-jobs-search.cloudapp.net:80",
+        "SQL_HOST": "",
+        "SQL_PORT": "",
+        "SQL_DB_NAME": "",
+        "SQL_USER": "",
+        "SQL_PASSWORD": ""
+    },
+    "PROD": {
+        "AUTH_URL": "",
+        "BASE_URL": "",
+        "SQL_HOST": "",
+        "SQL_PORT": "",
+        "SQL_DB_NAME": "",
+        "SQL_USER": "",
+        "SQL_PASSWORD": ""
+    }
+}

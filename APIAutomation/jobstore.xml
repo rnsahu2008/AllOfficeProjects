@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" configfailurepolicy="continue">
+	<parameter name="Environment" value="${env}"></parameter>
+    <test name="apitests"  parallel="none">
+    <classes>
+		<class name="com.lc.tests.jobstore.GetJobs"/>
+		<class name="com.lc.tests.jobstore.PostJobs"/>  
+		<class name="com.lc.tests.jobstore.UpdateJob"/>
+		<class name="com.lc.tests.jobstore.UpdateJobBlastAndStatus"/>
+		<class name="com.lc.tests.jobstore.Job"/>
+		<class name="com.lc.tests.jobstore.PostJobs_Negative"/>  
+		<class name="com.lc.tests.jobstore.UpdateJob_Negative"/>	          
+   </classes>
+    
+    </test>
+</suite>

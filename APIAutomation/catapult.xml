@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" configfailurepolicy="continue">
+	
+	 <parameter name="Environment" value="${env}"></parameter>
+	 
+    <test name="LCI Tests"  parallel="none">   
+	<parameter name="Application" value="LCI"></parameter>	
+    <classes>
+		<class name="com.lc.tests.catapult.AddGetDeleteBookmarkHappyFlow"/>
+		<class name="com.lc.tests.catapult.AddViewedGetViewedLessonHappyFlow"/>
+		<class name="com.lc.tests.catapult.BulkBookmarkHappyFlow"/>
+		<class name="com.lc.tests.catapult.CatapultEndtoEndTest"/>		
+    </classes>
+    </test>
+	<test name="MPI Tests"  parallel="none"> 
+	<parameter name="Application" value="MPI"></parameter>    
+    <classes>
+		<class name="com.lc.tests.catapult.AddGetDeleteBookmarkHappyFlow"/>
+		<class name="com.lc.tests.catapult.AddViewedGetViewedLessonHappyFlow"/>
+		<class name="com.lc.tests.catapult.BulkBookmarkHappyFlow"/>
+		<class name="com.lc.tests.catapult.CatapultEndtoEndTest"/>		
+    </classes>
+    </test>
+</suite>

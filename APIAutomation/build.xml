@@ -1,0 +1,246 @@
+<project name="API Automation" default="runtest" basedir=".">
+
+    <property name="current.dir" value="."/>
+    <property name="main.dir" value="main"/>
+	<property name="tests.dir" value="tests"/>
+    <property name="libs.dir" value="libs"/>
+    <property name="res.dir" value="res"/>
+    <property name="class.dir" value="classes"/>
+
+    <target name="init">
+        <echo message="##### Running init #####"/>
+        <mkdir dir="classes"/>
+    </target>
+
+    <target name="clean">
+        <echo message="##### Cleaning Folders and Results #####"/>
+        <delete dir="classes"/>
+    	<!--<delete file="TestReport.zip"/>-->
+    	<delete file="log.html"/>
+    	<delete dir = "testng-output" />
+        <antcall target="init"/>
+        <antcall target="compile-only"/>
+    </target>
+
+    <target name="compile-only">
+        <echo message="##### Running JAVA Source compile #####"/>
+        <javac destdir="classes" source="1.7" includeantruntime="false" debug="true" debuglevel="vars,lines,source">
+            <src>
+                <pathelement location="main"/>
+            	<pathelement location="tests"/>
+            </src>
+            <classpath>
+                <fileset dir="libs" includes="**/*.jar"/>
+            </classpath>
+        </javac>
+        <mkdir dir="${class.dir}/res"/>
+        <copy todir="${current.dir}/classes/res/">
+            <fileset dir="res">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+    </target>
+	
+    <path id="testngcp">
+        <pathelement location="classes"/>
+        <pathelement location="classes/res"/>
+        <fileset dir="libs">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+	<target name="runtest" depends="clean">
+		 <property name="env" value="${env}"/>
+		 <property name="service" value="${service}"/>
+		 <echo message="####  Running TestNG Task ####"/>
+				<echo message="#### Running API tests of : ${service} on ${env} environment ####"/>
+		        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+		        <property name="testng.min.memory" value="-Xms1G"/>
+		        <property name="testng.max.memory" value="-Xmx10G"/>
+		        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+		            <jvmarg value="-DlogFileSuffix=testng"/>
+		            <xmlfileset dir="." includes="${service}.xml"/>
+		        </testng>
+				<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+				        <arg line="${service}"/>
+						<arg line="${env}"/>
+					<classpath refid="testngcp"/>
+				</java>
+	</target>
+	
+	<target name="jobalerts" depends="clean">
+	        <echo message="####  Running TestNG Task ####"/>
+	        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+	        <property name="testng.min.memory" value="-Xms1G"/>
+	        <property name="testng.max.memory" value="-Xmx10G"/>
+	        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+	            <jvmarg value="-DlogFileSuffix=testng"/>
+	        	<sysproperty key="env" value="${env}"/>
+	            <xmlfileset dir="." includes="jobalerts_v1.xml"/>
+	        </testng>
+			<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+			         <arg line="jobalerts-V1"/>
+					<arg line="${env}"/>			
+				<classpath refid="testngcp"/>
+			 </java>
+	    	
+	    	<echo message="####  Running TestNG Task ####"/>
+	    	        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+	    	        <property name="testng.min.memory" value="-Xms1G"/>
+	    	        <property name="testng.max.memory" value="-Xmx10G"/>
+	    	        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+	    	            <jvmarg value="-DlogFileSuffix=testng"/>
+	    	        	<sysproperty key="env" value="${env}"/>
+	    	            <xmlfileset dir="." includes="jobalerts_v2.xml"/>
+	    	        </testng>
+	    			<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+	    			         <arg line="jobalerts-V2"/>
+	    					<arg line="${env}"/>			
+	    				<classpath refid="testngcp"/>
+	    			 </java>
+	    </target>
+		
+		<target name="ecomsanity" depends="clean">
+			        <echo message="####  Running TestNG Task ####"/>
+			        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+			        <property name="testng.min.memory" value="-Xms1G"/>
+			        <property name="testng.max.memory" value="-Xmx10G"/>
+			        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+			            <jvmarg value="-DlogFileSuffix=testng"/>
+			        	<sysproperty key="env" value="${env}"/>
+			            <xmlfileset dir="." includes="ecomsanity.xml"/>
+			        </testng>
+			    	<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+			    			    <arg line="ecomsanity"/>
+			    				<arg line="${env}"/>
+			    				<arg line="${clientcd}"/>
+			    				<classpath refid="testngcp"/>
+			    			 </java>
+			    </target>
+	
+	<target name="ecom" depends="clean">
+		        <echo message="####  Running TestNG Task ####"/>
+		        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+		        <property name="testng.min.memory" value="-Xms1G"/>
+		        <property name="testng.max.memory" value="-Xmx10G"/>
+		        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+		            <jvmarg value="-DlogFileSuffix=testng"/>
+		        	<sysproperty key="env" value="${env}"/>
+		            <xmlfileset dir="." includes="ecom.xml"/>
+		        </testng>
+		    	<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+		    			    <arg line="ecom"/>
+		    				<arg line="${env}"/>
+		    				<arg line="${Switch}"/>
+		    		        <arg line="${Wcrd}"/>
+		    				<arg line="${Adyn}"/>
+		    				<classpath refid="testngcp"/>
+		    			 </java>
+		    </target>
+	
+    
+		<!--
+    <target name="jobstore" depends="clean">
+        <echo message="####  Running TestNG Task ####"/>
+        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+        <property name="testng.min.memory" value="-Xms1G"/>
+        <property name="testng.max.memory" value="-Xmx10G"/>
+        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+            <jvmarg value="-DlogFileSuffix=testng"/>
+        	<sysproperty key="property" value="${property}"/>
+            <xmlfileset dir="." includes="jobstore.xml"/>
+        </testng>
+		<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+		         <arg line="jobstore"/>
+				<arg line="${property}"/>
+			<classpath refid="testngcp"/>
+		</java>
+    </target>
+	
+    <target name="jobsearch" depends="clean">
+        <echo message="####  Running TestNG Task ####"/>
+        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+        <property name="testng.min.memory" value="-Xms1G"/>
+        <property name="testng.max.memory" value="-Xmx10G"/>
+        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+            <jvmarg value="-DlogFileSuffix=testng"/>
+        	<sysproperty key="property" value="${property}"/>
+            <xmlfileset dir="." includes="jobsearch.xml"/>
+        </testng>
+		<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+		         <arg line="jobsearch"/>
+				 <arg line="${property}"/>
+			<classpath refid="testngcp"/>
+		</java>
+    </target>
+    	
+	<target name="userservice" depends="clean">
+		        <echo message="####  Running TestNG Task ####"/>
+		        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+		        <property name="testng.min.memory" value="-Xms1G"/>
+		        <property name="testng.max.memory" value="-Xmx10G"/>
+		        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+		            <jvmarg value="-DlogFileSuffix=testng"/>
+		        	<sysproperty key="property" value="${property}"/>
+		            <xmlfileset dir="." includes="userservice.xml"/>
+		        </testng>
+		<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+		         <arg line="userservices"/>
+				 <arg line="${property}"/>
+			<classpath refid="testngcp"/>
+		 </java>
+		</target>
+	
+		<target name="trackingservice" depends="clean">
+			        <echo message="####  Running TestNG Task ####"/>
+			        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+			        <property name="testng.min.memory" value="-Xms1G"/>
+			        <property name="testng.max.memory" value="-Xmx10G"/>
+			        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+			            <jvmarg value="-DlogFileSuffix=testng"/>
+			        	<sysproperty key="property" value="${property}"/>
+			            <xmlfileset dir="." includes="trackingservice.xml"/>
+			        </testng>
+			<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+			         <arg line="trackingservices"/>
+					 <arg line="${property}"/>
+				<classpath refid="testngcp"/>
+			 </java>
+			</target>
+	
+		<target name="catapult" depends="clean">
+					        <echo message="####  Running TestNG Task ####"/>
+					        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+					        <property name="testng.min.memory" value="-Xms1G"/>
+					        <property name="testng.max.memory" value="-Xmx10G"/>						
+					        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">					        	
+					        	<jvmarg value="-DlogFileSuffix=testng"/>					        	
+					        	<sysproperty key="property" value="${property}"/>
+					            <xmlfileset dir="." includes="catapult.xml"/>					  
+					        </testng>		
+					<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+					         <arg line="catapult"/>
+							 <arg line="${property}"/>														
+						<classpath refid="testngcp"/>
+					 </java>
+					</target>
+	
+	 <target name="ecomsanity" depends="clean">
+	        <echo message="####  Running TestNG Task ####"/>
+	        <taskdef name="testng" classpathref="testngcp" classname="org.testng.TestNGAntTask"/>
+	        <property name="testng.min.memory" value="-Xms1G"/>
+	        <property name="testng.max.memory" value="-Xmx10G"/>
+	        <testng classpathref="testngcp" outputdir="testng-output" verbose="1" haltonfailure="false" delegateCommandSystemProperties="true">
+	            <jvmarg value="-DlogFileSuffix=testng"/>
+	        	<sysproperty key="property" value="${property}"/>
+	            <xmlfileset dir="." includes="ecomsanity.xml"/>
+	        </testng>
+	    	<java fork="true" failonerror="yes" classname="com.lc.utils.EmailUtil">
+	    			    <arg line="ecomsanity"/>
+	    				<arg line="${property}"/>
+	    				<arg line="${clientcd}"/>
+	    				<classpath refid="testngcp"/>
+	    			 </java>
+	    </target>	
+	    -->
+</project>

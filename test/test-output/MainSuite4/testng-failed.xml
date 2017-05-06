@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [MainSuite4]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+  </listeners>
+  <test name="FreightCharges(failed)">
+    <classes>
+      <class name="src.suborderFreightCost">
+        <methods>
+          <include name="freightCost"/>
+          <include name="setDriver"/>
+          <include name="driverClose"/>
+        </methods>
+      </class> <!-- src.suborderFreightCost -->
+    </classes>
+  </test> <!-- FreightCharges(failed) -->
+</suite> <!-- Failed suite [MainSuite4] -->

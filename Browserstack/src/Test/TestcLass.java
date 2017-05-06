@@ -33,6 +33,8 @@ public class TestcLass extends ActionClass {
 		System.out.println("Chrome driver selected");
 		driver.get("https://www.flipkart.com/");
 		System.out.println("i am going to execute");
+		System.out.println("i am going to execute1");
+
 	}
 
 	@Test

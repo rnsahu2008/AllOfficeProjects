@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Jars/java-client-3.4.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Jars/selenium-server-standalone-2.52.0.jar" sourcepath="C:/Jars/selenium-server-standalone-2.52.0.jar"/>
+	<classpathentry kind="lib" path="C:/Jars/maven-clean-plugin-2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Jars/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Jars/gson-1.5-sources.jar/gson-1.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Jars/selenium-java-2.52.0.jar"/>
+	<classpathentry kind="lib" path="C:/Jars/selenium-java-2.52.0-srcs.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

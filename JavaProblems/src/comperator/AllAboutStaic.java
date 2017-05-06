@@ -2,6 +2,7 @@ package comperator;
 
 public class AllAboutStaic 
 {		static int count=0;
+int k =1100;
 
 int i=0;
 	AllAboutStaic()

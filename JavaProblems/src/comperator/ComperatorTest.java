@@ -11,6 +11,7 @@ import net.sourceforge.htmlunit.corejs.javascript.tools.debugger.Main;
 
 public class ComperatorTest  {
 	
+	int hjkh=199;
 	public static void main(String[] args)
 	{
 		ArrayList<Student> st = new ArrayList<Student>();

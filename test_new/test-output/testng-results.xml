@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="MainSuite4" duration-ms="190888" started-at="2017-02-14T11:21:49Z" finished-at="2017-02-14T11:25:00Z">
+    <groups>
+    </groups>
+    <test name="Logictic Data" duration-ms="190888" started-at="2017-02-14T11:21:49Z" finished-at="2017-02-14T11:25:00Z">
+      <class name="src.LogisticData">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:src.LogisticData@cf834c8]" name="setDriver" is-config="true" duration-ms="6029" started-at="2017-02-14T16:51:49Z" finished-at="2017-02-14T16:51:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="PASS" signature="Logisticdata(java.util.ArrayList, java.util.ArrayList, java.util.ArrayList, java.util.ArrayList)[pri:0, instance:src.LogisticData@cf834c8]" name="Logisticdata" duration-ms="184741" started-at="2017-02-14T16:51:55Z" description="Data" data-provider="logisticdata" finished-at="2017-02-14T16:55:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[41357349601, 41357349602, 41357349603, 41357349604, 41357349605, 41357349606, 41357349607, 41357349608, 41357349609, 41357349610]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[500012, 500012, 500012, 500012, 500012, 500012, 500012, 500012, 500012, 500012]]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[[Aramex, Aramex, Aramex, Aramex, Aramex, Aramex, Aramex, Aramex, Aramex, Aramex]]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[[2130, 2130, 2130, 2130, 2130, 2130, 2130, 2130, 2130, 2130]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logisticdata -->
+        <test-method status="PASS" signature="driverClose()[pri:0, instance:src.LogisticData@cf834c8]" name="driverClose" is-config="true" duration-ms="1267" started-at="2017-02-14T16:55:00Z" finished-at="2017-02-14T16:55:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverClose -->
+      </class> <!-- src.LogisticData -->
+    </test> <!-- Logictic Data -->
+  </suite> <!-- MainSuite4 -->
+</testng-results>

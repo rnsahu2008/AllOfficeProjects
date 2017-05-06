@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+]>
+
+<project name="Demo"   basedir="E:\Projects\test">  
+
+<!-- ========== Initialize Properties =================================== -->
+    <property environment="env"/>
+    
+    <property name="ws.home" value="${basedir}"/>
+	<property name="ws.jars" value="${ws.home}/libs"/>
+    <property name="test.dest" value="${ws.home}\build"/>
+    <property name="test.src" value="${ws.home}/src"/>
+	<property name="ng.result" value="test-output"/>
+	<property name="ng.result" value="${ws.home}/test-output/"/>	
+	<property name="testng_templates.dir" value="${ws.home}/TestngTemplates/"/>
+	
+	
+    <target name="setClassPath" unless="test.classpath">
+        <path id="classpath_jars">
+        	<pathelement location="C:/Program Files/Java/jre7/lib/charsets.jar"/>
+		   <pathelement location="C:/Program Files/Java/jre7/lib/jce.jar"/>
+			<pathelement location="C:/Program Files/Java/jre7/lib/jsse.jar"/>
+			 <pathelement location="C:/Program Files/Java/jre7/lib/resources.jar"/>
+			<pathelement location="C:/Program Files/Java/jre7/lib/rt.jar"/>
+            <fileset dir="${ws.jars}" includes="*.jar"></fileset>
+           
+        </path>
+        <pathconvert pathsep=":" 
+            property="test.classpath" 
+            refid="classpath_jars"/>
+        
+    </target>
+
+    <target name="init" depends="setClassPath">
+        <tstamp>
+            <format property="start.time" pattern="MM-dd-yyyy hh:mm aa" />
+        </tstamp>
+    	
+  
+    	
+    	
+    	<taskdef resource="testngtasks" classpath="${ws.jars}/testng-6.9.9.jar" /> 
+    	
+    </target>
+  
+	
+    <!-- all -->
+    <target name="all">
+    </target>
+
+    <!-- clean -->
+    <target name="clean">
+        <delete dir="${test.dest}"/>
+    </target>
+	 <!-- compile -->
+	    <target name="compile" depends="init, clean,setClassPath" > 
+			<delete includeemptydirs="true" quiet="true">
+	            <fileset dir="${test.dest}" includes="**/*"/>
+			</delete>
+	        <echo message="making directory..."/>
+			<mkdir dir="${test.dest}"/>
+	        <echo message="classpath------: ${test.classpath}"/>
+	        <echo message="compiling..."/>
+	         <echo message="attach------: ${current.time}"/>
+	        <javac 
+	            debug="true" 
+	        	includeantruntime="false"
+	            destdir="${test.dest}" 
+	            srcdir="${test.src}" 
+	            target="1.7" 
+	        	 
+	    	  classpath="${test.classpath}"   
+	        >
+	        </javac>
+	      </target>
+
+	    <!-- build -->
+	    <target name="build" depends="compile">
+	    </target>
+	    
+	    	
+	 <!-- run For all  test cases -->
+	 <target name="run" depends="build" >
+	    		 <path id="classpath">
+	    			<fileset dir="${ws.jars}" includes="**/*.jar"/>
+	    		</path>
+	     <taskdef resource="testngtasks" classpath="${ws.home}\libs\testng-6.9.9.jar"/>
+	        <testng classpath="${test.classpath}:${test.dest}" classpathref="classpath" >	
+	            <xmlfileset dir="${ws.home}" includes="CasePanel.xml"/>
+	        </testng>	 	
+	     </target>   
+	<path id="test.c">
+		        <fileset dir="${ws.jars}" includes="*.jar"/>
+		</path>
+	
+	 <!-- run For courier data -->
+	 <target name="courier" depends="build" >
+	    		 <path id="classpath">
+	    			<fileset dir="${ws.jars}" includes="**/*.jar"/>
+	    		</path>
+	     <taskdef resource="testngtasks" classpath="${ws.home}\libs\testng-6.9.9.jar"/>
+	        <testng classpath="${test.classpath}:${test.dest}" classpathref="classpath" >	
+	            <xmlfileset dir="${ws.home}" includes="CourierData.xml"/>
+	        </testng>	 	
+	     </target>   
+	<path id="test.c">
+		        <fileset dir="${ws.jars}" includes="*.jar"/>
+		</path>
+	
+		
+	
+</project>

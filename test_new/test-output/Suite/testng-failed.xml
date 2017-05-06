@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" verbose="2" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+  </listeners>
+  <test name="PO Creation(failed)">
+    <classes>
+      <class name="src.EbizSkuUpdateTest">
+        <methods>
+          <include name="sendMail"/>
+          <include name="driverClose"/>
+          <include name="setDriver"/>
+          <include name="addPo"/>
+        </methods>
+      </class> <!-- src.EbizSkuUpdateTest -->
+    </classes>
+  </test> <!-- PO Creation(failed) -->
+</suite> <!-- Failed suite [Suite] -->

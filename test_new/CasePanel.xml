@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite preserve-order="true" name="MainSuite4" parallel="false" verbose ="2" thread-count="2">
+<parameter name="pdfngreport-properties" value="pdfngreport.properties" />
+
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter">
+          <listener class-name="com.uttesh.pdfngreport.PDFReportListener" />
+       <sysproperty key="org.uncommons.reportng.show-expected-exceptions" value="true"/>
+       <sysproperty key="org.uncommons.reportng.velocity-log" value="true"/>   
+       <sysproperty key="org.uncommons.reportng.escape-output" value="false" />    
+      </listener>
+    
+
+</listeners>
+<test name="Case Panel" preserve-order="true">
+  
+    <classes>
+     
+       <class name="src.CasePanel">
+       <methods>
+       <include name="login"></include>
+       <include name="casePanel"></include>
+       </methods>
+        </class> 
+        </classes>
+ 
+  </test>
+  <!--  
+<test name="Case Panel" preserve-order="true">
+  
+    <classes>
+     
+       <class name="src.CFRAccountDetailsCapture">
+       <methods>
+       <include name="login"></include>
+       <include name="accountDetails"></include>
+       </methods>
+        </class> 
+        </classes>
+ 
+  </test>
+   -->
+</suite> <!-- Suite -->

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" 
+		/> -->
+
+	<property resource="logback-${profile}.properties" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
+		<File>logs/server.log</File> <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> 
+		<FileNamePattern>logs/server.%d{yyyy-MM-dd}.log</FileNamePattern> </rollingPolicy> 
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"> <pattern>%d 
+		[%thread] %-5level %logger{36} - %msg%n</pattern> </encoder> </appender> -->
+
+	<appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+		<errorHandler />
+		<facility>local5</facility>
+		<SyslogHost>172.16.0.70</SyslogHost>
+		<port>514</port>
+		<suffixPattern>%d [%thread] %-5level %logger{36} C:%X{CommandId} -
+			%msg%n</suffixPattern>
+	</appender>
+
+	<appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+		<smtpHost>${email.smtp.server}</smtpHost>
+		<!-- <to>bhargav.janjam@network18online.com</to> -->
+		<to>${email.alert.to.address}</to>
+		<from>inventoryalerts@homeshop18.com</from>
+		<subject>ALERT: %m</subject>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${HOSTNAME} %date %-5level %logger{35} - %message%n
+			</pattern>
+		</layout>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<cyclicBufferTracker class="ch.qos.logback.core.spi.CyclicBufferTrackerImpl">
+			<bufferSize>1</bufferSize>
+		</cyclicBufferTracker>
+	</appender>
+
+	<appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
+		<discriminator>
+			<key>threadname</key>
+			<defaultValue>reads</defaultValue>
+		</discriminator>
+		<sift>
+			<appender name="${threadname}"
+				class="ch.qos.logback.core.rolling.RollingFileAppender">
+				<File>logs/${threadname}.log</File>
+				<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+					<FileNamePattern>logs/${threadname}.%d{yyyy-MM-dd}.log.gz
+					</FileNamePattern>
+				</rollingPolicy>
+				<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+					<pattern>%d [%thread] %-5level %logger{36} - %msg%n</pattern>
+				</encoder>
+			</appender>
+		</sift>
+	</appender>
+
+	<logger name="com.hs18" level="INFO" />
+	<logger name="INVENTORY" level="INFO" />
+	<logger name="com.hs18.cp" level="WARN" />
+	<logger name="com.hs18.courier" level="WARN" />
+
+	<!-- <logger name="org.springframework.cache" level="DEBUG"/> -->
+	<!-- <logger name="org.hibernate.transaction" level="DEBUG"/> -->
+
+	<root level="TRACE">
+		<!-- <appender-ref ref="STDOUT" /> -->
+		<!-- <appender-ref ref="FILE" /> -->
+		<!-- Enable below, only when needed -->
+		<!-- <appender-ref ref="SYSLOG" /> -->
+		<appender-ref ref="EMAIL" />
+		<appender-ref ref="SIFT" />
+
+	</root>
+</configuration>

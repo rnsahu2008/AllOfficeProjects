@@ -1,0 +1,13 @@
+
+syntax: regexp
+^DFCTests/target$
+syntax: regexp
+^DFCTests/test-output$
+syntax: regexp
+^EbizTests/target$
+syntax: regexp
+^EbizTests/test-output$
+syntax: regexp
+^EbizTests/bin/target$
+syntax: regexp
+^EbizTests/bin$

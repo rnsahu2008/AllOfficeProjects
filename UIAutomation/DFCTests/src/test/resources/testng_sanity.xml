@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite junit="false" name="WebTestsSuite" parallel="false" thread-count="5">
+   
+ 	<listeners>
+   		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+     </listeners>
+    
+  <test annotations="JDK" junit="false" name="WebTests" verbose="5">
+
+    <groups>
+      <run>
+        <include name="Sanity"/>
+      </run>
+    </groups>
+	
+
+    <classes>
+       	<class name="com.hs18.dfc.MyAccount"/>
+        <class name="com.hs18.dfc.PDP"/>
+      	<class name="com.hs18.dfc.Checkouts"/>
+   </classes>
+
+  </test>
+
+</suite>

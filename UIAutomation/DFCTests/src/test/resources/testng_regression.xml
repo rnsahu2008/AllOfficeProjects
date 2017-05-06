@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite junit="false" name="WebTestsSuite" parallel="false" thread-count="5">
+   
+ 	<listeners>
+   		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+     </listeners>
+    
+  <test annotations="JDK" junit="false" name="WebTests" verbose="5">
+
+    <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
+	
+
+    <classes>
+       	<class name="com.sel.MyAccountTest"/>
+      	<!--  <class name="com.sel.SearchTests"/>
+      	<class name="com.sel.WebTests"/>
+        <class name="com.sel.PDPTests"/>
+     	<class name="com.sel.HomepageTests"/>
+      	<class name="com.sel.SubCategoryTests"/>
+     	<class name="com.sel.Homepage"/>
+     	<class name="com.sel.CategoryTests"/> 
+     	<class name="com.sel.ApparelTests"/>
+        <class name="com.sel.PaymentTests"/>-->
+   </classes>
+
+  </test>
+
+</suite>

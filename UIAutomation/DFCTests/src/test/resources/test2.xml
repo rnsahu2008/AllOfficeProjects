@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite junit="false" name="WebTestsSuite" parallel="false" thread-count="5">
+   <!-- <parameter name="config-file" value="src/test/resources/config_firefox.properties"/> -->
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+     </listeners>
+    
+  <test annotations="JDK" junit="false" name="WebTests" verbose="5">
+    
+
+    <classes>
+        
+        <class name="com.hs18.dfc.ExecutionOrderOfTestNGAnnotations"/>
+        
+     </classes>
+
+  </test>
+
+</suite>

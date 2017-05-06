@@ -1,0 +1,1 @@
+mvn clean -Dconfig-file=config_remote.properties test

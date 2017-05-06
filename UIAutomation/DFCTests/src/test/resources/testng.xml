@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite junit="false" name="DfcTestsSuite" parallel="false" thread-count="5">
+   <!-- <parameter name="config-file" value="src/test/resources/config_firefox.properties"/> -->
+ 	<listeners>
+   		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+     </listeners>
+    
+  <test annotations="JDK" junit="false" name="DfcTests" verbose="5">
+    <!-- <parameter name="Dfc_HOST" value="http://www.homeshop18.biz/"/> -->
+ <!--    <groups>
+      <run>
+         <include name="HealthCheck"/>
+
+      </run>
+    </groups> -->
+	
+    <classes>
+  	    <class name="com.hs18.dfc.DfcTest"/>
+
+    </classes>
+  </test>
+</suite>

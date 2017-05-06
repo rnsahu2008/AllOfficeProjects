@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BrowserStacksSuite" preserve-order="true">
+
+
+		<parameter name="url" value="https://www.flipkart.com/" />
+		
+	<test name="flipkartPrice">
+			<classes>
+					<class name="Test.TestcLass">
+					        <methods>
+       			         		<include name="flipkartPrice"/>
+      </methods>
+					
+			</class>
+			
+			</classes>
+	</test> <!-- CRM -->
+</suite> 

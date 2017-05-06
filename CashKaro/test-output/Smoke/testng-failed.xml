@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Smoke]">
+  <parameter name="filepath" value="C:/Users/Ram.Sahu//Desktop/Book1.xlsx"/>
+  <parameter name="url" value="http://cashkaro.iamsavings.co.uk/"/>
+  <parameter name="Browser" value="chrome"/>
+  <listeners>
+    <listener class-name="utils.Screenshot"/>
+    <listener class-name="utils.ExtentReporterNG"/>
+  </listeners>
+  <test name="Cash(failed)">
+    <classes>
+      <class name="Test.TestcLass">
+        <methods>
+          <include name="setDriver"/>
+          <include name="closedriver"/>
+          <include name="setup"/>
+          <include name="ForgotPassword" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Test.TestcLass -->
+    </classes>
+  </test> <!-- Cash(failed) -->
+</suite> <!-- Failed suite [Smoke] -->

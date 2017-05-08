@@ -9,11 +9,10 @@ import java.io.IOException;
 public class WriteinTextFile {
 	public static void main(String[] args) throws IOException {
 		
-		FileWriter fw = new FileWriter("D:\\AAAAAAA\\File1.txt");
+	FileWriter fw = new FileWriter("D:\\AAAAAAA\\File1.txt");
 	BufferedWriter bw = new BufferedWriter(fw);
 	String content="i am going to write something";
 	bw.write(content);
-	System.out.println("done");
 	bw.close();
 	fw.close();
 	
@@ -21,9 +20,10 @@ public class WriteinTextFile {
 
 	FileReader fr = new FileReader("D:\\AAAAAAA\\File1.txt");
 BufferedReader br = new BufferedReader(fr);
-while(br.readLine()!=null)
+String line;
+while((line=br.readLine())!=null)
 {
-System.out.println(br.readLine());	
+System.out.println(line);	
 }
 		
 	}

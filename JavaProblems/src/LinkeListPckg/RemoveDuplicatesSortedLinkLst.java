@@ -67,9 +67,9 @@ System.out.format("%d ", temp.data);
  public static void main(String[] args)
 	{
 	 RemoveDuplicatesSortedLinkLst list= new RemoveDuplicatesSortedLinkLst();
-	 list.head = new Node(11);
+	 list.head = new Node(16);
 	 Node obj1 = new Node(12);
-	 Node obj2 = new Node(12);
+	 Node obj2 = new Node(13);
 	 Node obj3 = new Node(14);
 	 Node obj4 = new Node(15);
 	 Node obj5 = new Node(16);
@@ -77,7 +77,10 @@ System.out.format("%d ", temp.data);
 	 obj1.next=obj2;
 	 obj2.next=obj3;
 	 obj3.next=obj4;
-	obj4.next=null;
+	obj4.next=obj5;
+	obj5.next=null;
+	list.print();
+	System.out.println();
 	list.RemoveDuplicates();
 list.print();	
 	

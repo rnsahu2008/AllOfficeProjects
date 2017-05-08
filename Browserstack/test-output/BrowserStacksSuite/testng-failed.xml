@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [BrowserStacksSuite]">
+  <parameter name="url" value="https://www.flipkart.com/"/>
+  <test name="flipkartPrice">
+    <classes>
+      <class name="Test.TestcLass">
+        <methods>
+          <include name="flipkartPrice"/>
+        </methods>
+      </class> <!-- Test.TestcLass -->
+    </classes>
+  </test> <!-- flipkartPrice -->
+  <test name="flipkartPrice(failed)">
+    <classes>
+      <class name="Test.TestcLass">
+        <methods>
+          <include name="flipkartPrice"/>
+          <include name="setDriver"/>
+          <include name="closedriver"/>
+        </methods>
+      </class> <!-- Test.TestcLass -->
+    </classes>
+  </test> <!-- flipkartPrice(failed) -->
+</suite> <!-- Failed suite [BrowserStacksSuite] -->

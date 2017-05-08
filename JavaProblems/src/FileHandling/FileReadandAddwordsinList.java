@@ -25,26 +25,18 @@ public class FileReadandAddwordsinList {
 	public static void main(String[] args) throws IOException {
 		List<String> words = new ArrayList<String>();
 
+//	Map<String Integer>	
+		
+		
+		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		String line;
 		BufferedReader br = new BufferedReader(new FileReader("D:\\AAAAAAA\\File.txt"));
 		while((line=br.readLine())!=null)
 		{
-					    //words.add(line);
-			
 			String[] str =line.split(" ");
-			
-			for (String st:str)
-			{
-				words.add(st);
-				
-			}
-			
-		}
 		
-		//System.out.println(words);
-		
-		for (String mp:words)
+		for (String mp:str)
 		{
 			if(map.containsKey(mp))
 			{
@@ -58,8 +50,7 @@ public class FileReadandAddwordsinList {
 			}
 		}
 		
-        Set<Entry<String, Integer>> set = map.entrySet();
-        List<Entry<String, Integer>> list = new ArrayList<Entry<String, Integer>>(set);
+        List<Entry<String, Integer>> list = new ArrayList<Entry<String, Integer>>(map.entrySet());
         Collections.sort(list,new Comparator<Map.Entry<String, Integer>>() 
         		{
 
@@ -80,15 +71,17 @@ public class FileReadandAddwordsinList {
             }
         } );
      
-        System.out.println(list.get(0));
+        System.out.println(Arrays.asList(list));
        
 
       /*  for(Map.Entry<String, Integer> entry:list){
             System.out.println(entry.getKey()+"--"+entry.getValue());
         }*/
-    }
+   
 		
 		
-   }
-
+   
+		}
+	}
+}
 

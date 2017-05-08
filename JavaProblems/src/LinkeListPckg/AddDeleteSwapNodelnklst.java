@@ -120,14 +120,7 @@ public class AddDeleteSwapNodelnklst {
 		Node newone = new Node(31);
 		Node temp = head;
 		Node prev = null;
-	if(temp.next==null)
-	{
-		temp.next=newone;
-		newone.next=null;
-		
-	}
-	else
-	{
+	
 		while(temp.next!=null)
 		{
 			prev=temp;
@@ -139,7 +132,7 @@ public class AddDeleteSwapNodelnklst {
 		
 		
 	}
-	}
+	
 	
 	
 	public void swapData(int x,int y)
@@ -202,7 +195,7 @@ public class AddDeleteSwapNodelnklst {
 		
 		//list.AddNewNodeonPosition(4);
 		//list.swapData(11, 14);
-		list.swapData(0, 1);
+	//	list.swapData(0, 1);
 		list.AddNewNodeonFromTail();
 		list.printList();
 		

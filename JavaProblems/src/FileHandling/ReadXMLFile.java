@@ -13,37 +13,36 @@ public class ReadXMLFile {
   public static void main(String argv[]) {
 
     try {
+    	
 
-	File fXmlFile = new File("D:\\AAAAAAA\\company.xml");
-	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-	Document doc = dBuilder.parse(fXmlFile);
-	doc.getDocumentElement().normalize();
+	File xmlfile = new File("D:\\AAAAAAA\\company.xml");
+	DocumentBuilderFactory dcbf= DocumentBuilderFactory.newInstance();
+	DocumentBuilder dcb=dcbf.newDocumentBuilder();
+	Document doc =dcb.parse(xmlfile);
+	//doc.getDocumentElement().normalize();
 
-	System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+	NodeList nlist = doc.getElementsByTagName("staff");
+	
+	//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
-	NodeList nList = doc.getElementsByTagName("staff");
 
-	System.out.println("----------------------------");
+	for (int i=0;i<nlist.getLength();i++)
+	{
+Node nNode=nlist.item(i);
+System.out.println("\nCurrent Element :" + nNode.getNodeName());
 
-	for (int i = 0; i < nList.getLength(); i++) {
-
-		Node nNode = nList.item(i);
-
-		System.out.println("\nCurrent Element :" + nNode.getNodeName());
-
-		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+	//	if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
 			Element eElement = (Element) nNode;
 
-			System.out.println("Staff id : " + eElement.getAttribute("id"));
+			System.out.println("Staff id : " + eElement.getElementsByTagName("id"));
 			System.out.println("First Name : " + eElement.getElementsByTagName("firstname").item(0).getTextContent());
 			System.out.println("Last Name : " + eElement.getElementsByTagName("lastname").item(0).getTextContent());
 			System.out.println("Nick Name : " + eElement.getElementsByTagName("nickname").item(0).getTextContent());
 			System.out.println("Salary : " + eElement.getElementsByTagName("salary").item(0).getTextContent());
 
 		}
-	}
+	//}
     } catch (Exception e) {
 	e.printStackTrace();
     }

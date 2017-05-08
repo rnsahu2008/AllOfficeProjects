@@ -76,11 +76,13 @@ this.Stream=Stream;
 @Override
 public int compareTo(Student1 stu) {
 	
-	return this.rollno.compareTo(stu.rollno);
+	return Stream.compareTo(stu.Stream);
 }
 
+
+
 /*@Override
-public int compareTo(Student1 stu) {
+public i	nt compareTo(Student1 stu) {
 	
 	int comparerollno = ((Student1) stu).getRollno();
 	return this.rollno-comparerollno;

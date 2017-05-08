@@ -1,9 +1,3 @@
-/DependencyInjection/
-/FactoryPattern/
-/FileHandling/
-/LinkeListPckg/
-/PojoCreation/
-/PolyMor/
 /ProgramsPorblems/
 /SearchAlgoritm/
 /SeleniumPackage/
@@ -12,3 +6,9 @@
 /TestInterface/
 /comperator/
 /jsonManupulation/
+/DependencyInjection/
+/FactoryPattern/
+/FileHandling/
+/LinkeListPckg/
+/PojoCreation/
+/PolyMor/

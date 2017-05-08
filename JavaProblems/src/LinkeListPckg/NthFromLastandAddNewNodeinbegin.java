@@ -35,8 +35,8 @@ public class NthFromLastandAddNewNodeinbegin {
 	public void display(Node head) {
 		Node n = head;
 		while (n != null) {
-			// System.out.print("->t;" + n.value);
-			System.out.print(n.value + ";");
+			// System.out.print(" " + n.value);
+			System.out.print(n.value + " ");
 
 			n = n.next;
 		}
@@ -60,6 +60,7 @@ public class NthFromLastandAddNewNodeinbegin {
 		}
 
 		current.next = NewnodeinLast;
+		NewnodeinLast.next=null;
 		return head;
 	}
 
@@ -93,6 +94,10 @@ public class NthFromLastandAddNewNodeinbegin {
 		fifth.next = sixth;
 		sixth.next = seventh;
 		seventh.next = null;
+		ls.display(head);
+		System.out.println();
+		ls.AddnewNodeinLast(head, 15);
+		ls.display(head);
 
 	}
 }

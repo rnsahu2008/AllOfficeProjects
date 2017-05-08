@@ -42,7 +42,7 @@ public class ComperatorTest  {
 
 class Student
 {
-int rollno;
+Integer rollno;
 String Name;
 String Stream;
 
@@ -59,7 +59,7 @@ class comparebyName  implements Comparator<Student>
 {
 		@Override
 		public int compare(Student s1, Student s2) {
-				return s1.Name.compareTo(s2.Name);
+				return (Integer)s1.rollno.compareTo((Integer)s2.rollno);
 	}
 
 	
